@@ -26,7 +26,6 @@
         "firebase-debug.*.log"
       ]
     }
-
   ],
   "emulators": {
     "auth": {

@@ -37,3 +37,15 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Firebase debug files
+*debug.log
+ui-debug.log
+firestore-debug.log
+pubsub-debug.log
+
+# Environmwnta variables
+environments
+environments/PlayCricket.ts
+environments/environment.ts
+environments/environment.prod.ts

@@ -14,7 +14,17 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@navestockcricketclub-monorepo-v2/interfaces-match": [
+        "libs/interfaces-match/src/index.ts"
+      ],
+      "@navestockcricketclub-monorepo-v2/services-playcricketapi": [
+        "libs/services-playcricketapi/src/index.ts"
+      ],
+      "@navestockcricketclub-monorepo-v2/services-publishpubsubmessages": [
+        "libs/services-publishpubsubmessages/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
