@@ -9,10 +9,7 @@ export class PublishPubSubMessage {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public publishPubSubMessage(pubsubTopicName: string, messagedata: any) {
-    const pubSubClient = new PubSub({
-      // Sending messages to the same region ensures they are received in order even when multiple publishers are used.
-      apiEndpoint: 'europe-west2-pubsub.googleapis.com:443',
-    });
+    const pubSubClient = new PubSub();
     let dataBuffer: Buffer  | undefined = undefined;
 
  // Create publisher options

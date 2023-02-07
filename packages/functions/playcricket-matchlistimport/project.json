@@ -1,20 +1,20 @@
 {
-  "name": "functions-apihello",
+  "name": "functions-playcricket-matchlistimport",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/functions/apihello/src",
+  "sourceRoot": "packages/functions/playcricket-matchlistimport/src",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "@nrwl/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/functions/apihello",
+        "outputPath": "dist/packages/functions/playcricket-matchlistimport",
         "format": ["cjs"],
-        "main": "packages/functions/apihello/src/main.ts",
-        "tsConfig": "packages/functions/apihello/tsconfig.app.json",
-        "assets": ["packages/functions/apihello/src/assets"],
+        "main": "packages/functions/playcricket-matchlistimport/src/main.ts",
+        "tsConfig": "packages/functions/playcricket-matchlistimport/tsconfig.app.json",
+        "assets": ["packages/functions/playcricket-matchlistimport/src/assets"],
         "externalDependencies": "all",
-        "outputFileName": "index.js",
+        "outputFileName": "index.cjs",
         "generatePackageJson": true,
         "updateBuildableProjectDepsInPackageJson": true,
         "buildableProjectDepsInPackageJsonType": "dependencies",
@@ -27,8 +27,8 @@
       "options": {
         "commands": [
           "lsof -t -i:9099 -i:5001 -i:8080 -i:5002 -i:8085 -i:9199 | xargs kill -9",
-          "nx run functions-apihello:lint",
-          "nx run functions-apihello:build:production",
+          "nx run functions-playcricket-matchlistimport:lint",
+          "nx run functions-playcricket-matchlistimport:build:production",
           "firebase emulators:start"
         ],
         "color": true,
@@ -39,10 +39,9 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "nx run functions-apihello:lint",
-          "nx run functions-apihello:build:production",
-          "firebase functions:delete apihello --region europe-west2",
-          "firebase deploy --only functions:hello"
+          "nx run functions-playcricket-matchlistimport:lint",
+          "nx run functions-playcricket-matchlistimport:build:production",
+          "firebase deploy --only functions:playcricketmatchlistimport"
         ],
         "color": true,
         "parallel": false
@@ -52,14 +51,16 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/functions/apihello/**/*.ts"]
+        "lintFilePatterns": [
+          "packages/functions/playcricket-matchlistimport/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "packages/functions/apihello/jest.config.ts",
+        "jestConfig": "packages/functions/playcricket-matchlistimport/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {

@@ -25,6 +25,17 @@
         "firebase-debug.log",
         "firebase-debug.*.log"
       ]
+    },
+    {
+      "source": "dist/packages/functions/playcricket-matchlistimport",
+      "runtime": "nodejs18",
+      "codebase": "playcricketmatchlistimport",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ]
     }
   ],
   "emulators": {
