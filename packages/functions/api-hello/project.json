@@ -41,8 +41,8 @@
         "commands": [
           "nx run functions-apihello:lint",
           "nx run functions-apihello:build:production",
-          "firebase functions:delete apihello --region europe-west2",
-          "firebase deploy --only functions:hello"
+          "firebase functions:delete apihello --force",
+          "firebase deploy --only functions:hello  "
         ],
         "color": true,
         "parallel": false

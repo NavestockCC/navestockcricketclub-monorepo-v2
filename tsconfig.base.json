@@ -15,8 +15,17 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@navestockcricketclub-monorepo-v2/interface-playcricket": [
+        "libs/interface-playcricket/src/index.ts"
+      ],
       "@navestockcricketclub-monorepo-v2/interfaces-match": [
         "libs/interfaces-match/src/index.ts"
+      ],
+      "@navestockcricketclub-monorepo-v2/services-match-firestoredb": [
+        "libs/services-match-firestoredb/src/index.ts"
+      ],
+      "@navestockcricketclub-monorepo-v2/services-matchinterface": [
+        "libs/services-matchinterface/src/index.ts"
       ],
       "@navestockcricketclub-monorepo-v2/services-playcricketapi": [
         "libs/services-playcricketapi/src/index.ts"

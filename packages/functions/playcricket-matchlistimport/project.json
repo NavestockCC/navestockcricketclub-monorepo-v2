@@ -41,6 +41,7 @@
         "commands": [
           "nx run functions-playcricket-matchlistimport:lint",
           "nx run functions-playcricket-matchlistimport:build:production",
+          "firebase functions:delete httptriggerplaycricetimport, getplaycricketmatchlistpubsub --force",
           "firebase deploy --only functions:playcricketmatchlistimport"
         ],
         "color": true,

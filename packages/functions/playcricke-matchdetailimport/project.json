@@ -1,0 +1,54 @@
+{
+  "name": "functions-playcricke-matchdetailimport",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/functions/playcricke-matchdetailimport/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/functions/playcricke-matchdetailimport",
+        "format": ["cjs"],
+        "main": "packages/functions/playcricke-matchdetailimport/src/main.ts",
+        "tsConfig": "packages/functions/playcricke-matchdetailimport/tsconfig.app.json",
+        "assets": ["packages/functions/playcricke-matchdetailimport/src/assets"]
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "functions-playcricke-matchdetailimport:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "functions-playcricke-matchdetailimport:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/functions/playcricke-matchdetailimport/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/functions/playcricke-matchdetailimport/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

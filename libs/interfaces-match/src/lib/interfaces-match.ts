@@ -1,11 +1,11 @@
 import {Timestamp} from 'firebase-admin/firestore';
 
 export { 
-  MatchlistPlaycricketAPIRespone,
-  MatchDetailPlaycricketAPIRespone,
   MatchList, 
-  Match, 
+  Match,
+  isInstanceOfMatch, 
   MatchDescription,
+  isInstanceOfMatchDescription,
   Innings, 
   InningsDescription,
   Bat,
@@ -15,39 +15,13 @@ export {
   Player };
 
 /**
- * @description Interface describing the data returned by the getPlayCricketApiMatch_List
- * @field {string} status - axios http return status code
- * @field {string} statusText - axios http return status description
- * @field { season: string, matches: MatchDescription[] } data - data returned by the http call
- */
-interface MatchlistPlaycricketAPIRespone{
-  status: number;
-  statusText: string;
-  data: { season: string, matches: MatchDescription[] };
-}
-
-/**
- * @description Interface describing the data returned by the getPlayCricketApiMatch_Detail
- * @field {string} status - axios http return status code
- * @field {string} statusText - axios http return status description
- * @field {match_details: any[]} data - data returned by the http call
- */
- interface MatchDetailPlaycricketAPIRespone{
-  status: number;
-  statusText: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  data: {match_details: any[]};
-}
-
-
-/**
  * Match list
  * @field {number} season - number representing the season year
  * @field {Match[]} matches - array of {Match} the be played in a year
  */
 interface MatchList {
-  season: string;
-  matches: MatchDescription[];
+  season?: string;
+  matches?: MatchDescription[];
 }
 /**
  * @interface Match
@@ -58,7 +32,11 @@ interface MatchList {
 interface Match {
   description: MatchDescription;
   innings?: Innings[];
-  players?: Team[];
+  teams?: Team[];
+}
+
+function isInstanceOfMatch(object: unknown): object is Match {
+  return true;
 }
 
 /**
@@ -77,6 +55,8 @@ interface MatchDescription {
   competition_type?: string;
   match_type?: string;
   game_type?: string;
+  countdown_cricket?: string;
+  match_id?: string; 
   season?: string;
   match_date: string;
   match_date_timestamp?: Timestamp;
@@ -88,11 +68,11 @@ interface MatchDescription {
   home_club_name?: string;
   home_team_name?: string;
   home_team_id?: string;
-  home_club_id?: string;
+  home_club_id: string;
   away_club_name?: string;
   away_team_name?: string;
   away_team_id?: string;
-  away_club_id?: string;
+  away_club_id: string;
   umpire_1_name?: string;
   umpire_1_id?: string;
   umpire_2_name?: string;
@@ -118,14 +98,24 @@ interface MatchDescription {
   toss?: string;
   batted_first?: string;
   no_of_overs?: string;
+  balls_per_innings?: string;
+  no_of_innings?: string;
+  no_of_days?: string;
+  no_of_players?: string;
+  no_of_reserves?:string;
+  result?: string;
   result_updated?: boolean;
   result_description?: string;
   result_applied_to?: string;
   match_notes?: string;
 }
 
+function isInstanceOfMatchDescription(object: unknown): object is MatchDescription {
+  return true;
+}
+
 interface Innings{
-  description: InningsDescription;
+  description?: InningsDescription;
   bat?: Bat[];
   bowl?: Bowl[];
   fow?: FallOfWickets[];
@@ -140,6 +130,7 @@ interface InningsDescription{
   team_bowling_id?: string;
   club_bowling_name?: string;
   club_bowling_id?: string;
+  forfeited_innings?: boolean
   innings_number?: number;
   extra_byes?: number;
   extra_leg_byes?: number;
@@ -160,10 +151,6 @@ interface InningsDescription{
 }
 
 interface Bat{
-  team_bowling_name?: string;
-  team_bowling_id?: string;
-  club_bowling_name?: string;
-  club_bowling_id?: string;
   position: number;
   batsman_name: string;
   batsman_id: string;
@@ -181,6 +168,14 @@ interface Bat{
   sixes?: number;
   balls?: number;
   match_id?: number;
+  team_batting_name?: string;
+  team_batting_id?: string;
+  club_batting_name?: string;
+  club_batting_id?: string;
+  club_bowling_id?: string;
+  club_bowling_name?: string;
+  team_bowling_id?: string;
+  team_bowling_name?: string;
 }
 
 interface Bowl{
@@ -201,6 +196,10 @@ interface Bowl{
   team_batting_id?: string;
   club_batting_name?: string;
   club_batting_id?: string;
+  club_bowling_id?: string;
+  club_bowling_name?: string;
+  team_bowling_id?: string;
+  team_bowling_name?: string;
 }
 
 interface FallOfWickets {
@@ -216,16 +215,19 @@ interface FallOfWickets {
   team_batting_id?: string;
   club_batting_name?: string;
   club_batting_id?: string;
-  team_bowling_name?: string;
-  team_bowling_id?: string;
-  club_bowling_name?: string;
   club_bowling_id?: string;
+  club_bowling_name?: string;
+  team_bowling_id?: string;
+  team_bowling_name?: string;
 }
 
 interface Team{
+  club_id:string;
+  club_name:string;
   team_id: string;
   team_name: string;
   squad?: Player[];
+  match_id?: number;
 }
 
 interface Player {
@@ -234,4 +236,9 @@ interface Player {
   player_id: string;
   captain?: boolean;
   wicket_keeper?: boolean;
+  club_id:string;
+  club_name:string;
+  team_id: string;
+  team_name: string;
+  match_id: number;
 }

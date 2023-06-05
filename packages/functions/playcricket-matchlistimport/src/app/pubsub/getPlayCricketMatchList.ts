@@ -1,15 +1,20 @@
 
-
+/* Firebase Imports */
 import { onMessagePublished } from 'firebase-functions/v2/pubsub';
 import { logger } from 'firebase-functions/v2';
 
-import { PlayCricketMatchListAPICall } from '@navestockcricketclub-monorepo-v2/services-playcricketapi';
-import { MatchListDB } from '../services/MatchList_DB_service';
-import { PublishPubSubMessage } from '@navestockcricketclub-monorepo-v2/services-publishpubsubmessages';
+/* RXJS Imports */
 import { filter, map, switchMap } from 'rxjs/operators';
-import { MatchList } from '@navestockcricketclub-monorepo-v2/interfaces-match';
 import { forkJoin, lastValueFrom } from 'rxjs';
 
+/* Service Imports */
+import { PublishPubSubMessage } from '@navestockcricketclub-monorepo-v2/services-publishpubsubmessages';
+import { servicesMatchFirestoredb } from '@navestockcricketclub-monorepo-v2/services-match-firestoredb';
+import { PlayCricketMatchAPICall } from '@navestockcricketclub-monorepo-v2/services-playcricketapi';
+
+/* Interface Imports */
+import { PlaycricketAPIRespone_Matchlist } from '@navestockcricketclub-monorepo-v2/interface-playcricket';
+import { MatchList } from '@navestockcricketclub-monorepo-v2/interfaces-match';
 
 
 /**
@@ -25,8 +30,6 @@ import { forkJoin, lastValueFrom } from 'rxjs';
  *  5. writes the MatchList data to Firestore collection MatchList.<season>
  * @description Max: 150 matches in a season !!!
  */
-
-
 
 export const getPlayCricketMatchListPubSub = onMessagePublished(
   {topic: "Match_List_Import",
@@ -45,9 +48,8 @@ export const getPlayCricketMatchListPubSub = onMessagePublished(
         if (
           'season' in msgPayload.data.message.json === false ||
           msgPayload.data.message.json.season === undefined
-        ) {
-          seasonToImport = new Date().getFullYear().toString();
-        } else if (typeof msgPayload.data.message.json.season === 'string') {
+        ) {seasonToImport = new Date().getFullYear().toString();} 
+        else if (typeof msgPayload.data.message.json.season === 'string') {
           seasonToImport = msgPayload.data.message.json.season;
         } else if (typeof msgPayload.data.message.json.season === 'number') {
           seasonToImport = msgPayload.data.message.json.season.toString();
@@ -55,9 +57,9 @@ export const getPlayCricketMatchListPubSub = onMessagePublished(
           seasonToImport = new Date().getFullYear().toString();
         }
     
-        const PCAPICall = new PlayCricketMatchListAPICall();
+        const PCAPICall = new PlayCricketMatchAPICall();
         const psMessage = new PublishPubSubMessage();
-        const matchListDB = new MatchListDB();
+        const matchListDB = new servicesMatchFirestoredb();
     
         /**
          * Observable to:
@@ -71,23 +73,18 @@ export const getPlayCricketMatchListPubSub = onMessagePublished(
           seasonToImport
         ).pipe(
           filter(ApiResp => 'data' in ApiResp === true),
-          map((ApiResp) => ApiResp.data),
-          filter(ApiResp => ApiResp.matches !== undefined || ApiResp.matches.length > 0 ),
-          filter(ApiResp => ApiResp.matches.length < 151),
-          map(
-            (APIResp) =>
-              ({
-                season: seasonToImport,
-                matches: APIResp.matches,
-              } as MatchList)
-          ),
-          switchMap((mtchList) =>
+          map((ApiResp) => <PlaycricketAPIRespone_Matchlist>ApiResp.data),
+          filter(ApiRespData => ApiRespData.matches !== undefined || ApiRespData.matches.length > 0 ),
+          map( ApiRespData => <MatchList>ApiRespData),
+          switchMap((matchList) =>
             forkJoin({
+              //Write matchlist to pubsub
               matchListPubsubPublish: psMessage.publishPubSubMessage(
                 'PlayCricket_Match_List_Data',
-                mtchList
+                matchList
               ),
-              matchListDBWrite: matchListDB.addMatchlist(mtchList)
+              // write matchlist to FirestoreDB
+              matchListDBWrite: matchListDB.setMatchlist(matchList)
             })
           )
         );

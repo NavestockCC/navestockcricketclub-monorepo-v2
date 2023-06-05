@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { from, map, Observable, tap } from 'rxjs';
 import * as playcricketCert from "../../../../environments/PlayCricket";
-import {MatchDetailPlaycricketAPIRespone, MatchlistPlaycricketAPIRespone } from '@navestockcricketclub-monorepo-v2/interfaces-match'
+import {AXIOSAPIRespone_MatchDetailPlayCricket, AXIOSAPIRespone_MatchlistPlaycricket } from '@navestockcricketclub-monorepo-v2/interface-playcricket'
 
 const playcricketCredentials = {
     "apitoken" : playcricketCert.firebaseAuthData.api_token,
@@ -10,8 +10,8 @@ const playcricketCredentials = {
 
 
 
-export class PlayCricketMatchListAPICall{
-    public getPlayCricketApiMatch_List(seasonID: string): Observable<MatchlistPlaycricketAPIRespone> {
+export class PlayCricketMatchAPICall{
+    public getPlayCricketApiMatch_List(seasonID: string): Observable<AXIOSAPIRespone_MatchlistPlaycricket> {
         return from(
           axios({
             method: 'get',
@@ -30,13 +30,13 @@ export class PlayCricketMatchListAPICall{
               statusText: APIResp.statusText,
               data: { season: seasonID, matches: APIResp.data.matches }}
           )),
-        map(APIResp => APIResp as MatchlistPlaycricketAPIRespone)
+        map(APIResp => APIResp as AXIOSAPIRespone_MatchlistPlaycricket)
         );
       }
 
 
 
-  public getPlayCricketApiMatch_Detail(matchID: string): Observable<MatchDetailPlaycricketAPIRespone> {
+  public getPlayCricketApiMatch_Detail(matchID: string): Observable<AXIOSAPIRespone_MatchDetailPlayCricket> {
       return from(
         axios({
           method: 'get',
@@ -53,7 +53,8 @@ export class PlayCricketMatchListAPICall{
           status: APIResp.status,
           statusText: APIResp.statusText,
           data: APIResp.data 
-        }))
+        })),
+        map(APIResp => APIResp as AXIOSAPIRespone_MatchDetailPlayCricket)
       );
     }
 }
