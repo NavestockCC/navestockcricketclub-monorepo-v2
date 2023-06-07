@@ -9,27 +9,30 @@
  */
 
 
-import * as functions from 'firebase-functions';
+/* Firebase Imports */
+import { onMessagePublished } from 'firebase-functions/v2/pubsub';
+import { logger } from 'firebase-functions/v2';
+
+/* Service Imports */
 import { MatchList } from '@navestockcricketclub-monorepo-v2/interfaces-match';
-
 import { ComparisonService } from '../services/comparison.service';
-
-import {  mergeMap, map, concat, lastValueFrom } from 'rxjs';
 import { servicesMatchFirestoredb } from '@navestockcricketclub-monorepo-v2/services-match-firestoredb';
 import { PublishPubSubMessage } from '@navestockcricketclub-monorepo-v2/services-publishpubsubmessages';
+
+/* RXJS Imports */
+import {  mergeMap, map, concat, lastValueFrom } from 'rxjs';
+
 /**
  * PubSub trigger to compare MatchList from PlayCricket with MatchList last imported
  * Publishes a list of PubSub messages for matches which need updating
  */
-export const comparePlayCricketMatchListPubSub = functions
-.region('europe-west2')
-.runWith({memory: '512MB', timeoutSeconds: 300})
-.pubsub
-  .topic('PlayCricket_Match_List_Data')
-  .onPublish(async (msgPayload) => {
-
-
-      const payloadData = msgPayload.json as MatchList;
+export const comparePlayCricketMatchListPubSub = onMessagePublished(
+  {topic: "PlayCricket_Match_List_Data", 
+  region: "europe-west2",
+  timeoutSeconds: 60
+  }, 
+async (msgPayload) => {
+      const payloadData = msgPayload.data.message.json as MatchList;
       const seasonToImport: string = payloadData.season;
       const compServ = new ComparisonService();
       const mlDB = new servicesMatchFirestoredb();
@@ -53,7 +56,7 @@ export const comparePlayCricketMatchListPubSub = functions
           ),
           map(matchToImport => JSON.stringify({"matchid": matchToImport})),
           mergeMap((matchToImport) =>
-            pubSubWrite.publishPubSubMessage(
+            pubSubWrite.publishPubSuMessage(
               'Match_Detail_Import',
               matchToImport
             )
@@ -84,7 +87,7 @@ export const comparePlayCricketMatchListPubSub = functions
  * (also known as "background functions") by returning a JavaScript promise.
  */
     return await lastValueFrom(compareMatchList).catch(
-      e => functions.logger.debug(`comparePlayCricketMatchListPubSub: ${e}`)
+      e => logger.debug(`comparePlayCricketMatchListPubSub: ${e}`)
     );
 
 

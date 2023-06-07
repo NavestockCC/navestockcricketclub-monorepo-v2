@@ -89,7 +89,7 @@ interface PlayCrikcetMatchDescription {
   }
 
 interface PlayCricketMatchDetail{
-  id?: number;
+  id: number;
   status?: string;
   published?: string;
   last_updated?: string;

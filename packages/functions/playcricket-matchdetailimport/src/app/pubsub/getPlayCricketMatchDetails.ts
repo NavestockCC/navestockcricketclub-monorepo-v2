@@ -3,7 +3,7 @@
  * @author Lefras Coetzee
  * @description BackgroundFunction to trigger by publishing data<MatchId> to [Match_Detail_Import] PubSub Topic.
  * @description The function takes the MatchId and retrieved Match Details from the PlayCricket API
- * @description Data retrieved from the Play Cricket Api is transformed in to an Object:Match and written to the Firestore Fixtures collection
+ * @description Data retrieved from the Play Cricket Api is transformed in to an Object:Match and written to the Firestore FixtureList collection
  */
 
 
@@ -12,7 +12,7 @@ import { onMessagePublished } from 'firebase-functions/v2/pubsub';
 import { logger } from 'firebase-functions/v2';
 
 /* RXJS Imports */
-import { filter, forkJoin, lastValueFrom, map, switchMap } from 'rxjs';
+import { filter, forkJoin, lastValueFrom, map, mergeMap, switchMap } from 'rxjs';
 
 
 /* Interface Imports */
@@ -53,7 +53,7 @@ async (msgPayload) => {
      * 1. get detailed match information from PlayCricket API
      * 2. then extract the match details from the Payload data
      * 3. format the data into a Match interface Object
-     * 4. write the Match data to the Firestore collection Fixtures.<Match ID>
+     * 4. write the Match data to the Firestore collection FixtureList.<Match ID>
      */
     const getPCMatchDetail = PCAPICall.getPlayCricketApiMatch_Detail(
       matchID
@@ -61,14 +61,7 @@ async (msgPayload) => {
       filter(ApiResp => 'data' in ApiResp === true),
       filter(ApiResp=> ApiResp.data.match_details !== undefined || ApiResp.data.match_details.length > 0 ),
       map((ApiResp) => <PlayCricketMatchDetail>ApiResp.data.match_details[0]),
-      /* map(
-        (PlayCricketMatchDetail$) =>
-          ({
-            description: matchInterfaceServices.updateMatchDescription(PlayCricketMatchDetail$),
-            innings: matchInterfaceServices.innings(PlayCricketMatchDetail$),
-          } as Match)
-      ), */
-      map(
+      mergeMap(
         (PlayCricketMatchDetail$) => forkJoin(
           {
           description: matchInterfaceServices.updateMatchDescription_Observable(PlayCricketMatchDetail$),
@@ -82,11 +75,7 @@ async (msgPayload) => {
       switchMap((mData) => MLI.updateMatchDetails(mData))
     );
 
-    /**
-     * Resolve function performing the asynchronous processing
-     * (also known as "background functions") by returning a JavaScript promise.
-     */
     return await lastValueFrom(getPCMatchDetail).catch(
-      e => logger.debug(`getPlayCricketMatchDetailPubSub: ${e}`)
+      e => logger.error(`getPlayCricketMatchDetailPubSub: ${e}`)
     );
   });

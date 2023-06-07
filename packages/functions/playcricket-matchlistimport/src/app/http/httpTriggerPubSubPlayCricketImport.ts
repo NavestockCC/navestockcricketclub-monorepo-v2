@@ -9,7 +9,7 @@
 import {onRequest} from 'firebase-functions/v2/https';
 import { logger } from 'firebase-functions/v2';
 
-import { PublishPubSubMessage } from '@navestockcricketclub-monorepo-v2/services-publishpubsubmessages'
+import { PublishPubSubMessage } from '@navestockcricketclub-monorepo-v2/services-publishpubsubmessages';
 
 
 
@@ -26,17 +26,17 @@ export const httpPublishPlayCricetSeasonToImport = onRequest(
       const seasonToImport = req.query.season;
       const data = JSON.stringify({ season: seasonToImport });
       const publishMes = new PublishPubSubMessage();
-      publishMes.publishPubSubMessage('Match_List_Import', data)
+      publishMes.publishPubSuMessage('Match_List_Import', data)
       .subscribe({
         next: (v) => {
           logger.info( `PubSub Message ${v} published to topic Match_List_Import`);
           res.send(`Message ${v} published to Match_List_Import`);
         },
         error: (e) => {
-          logger.debug(JSON.stringify(e));
+          logger.error(JSON.stringify(e));
           res.send(JSON.stringify(e));
         },
-        complete: () => logger.debug('published to topic Match_List_Import complete'),
+        complete: () => logger.info('published to topic Match_List_Import complete'),
       });
   }
 );

@@ -209,13 +209,17 @@ describe('MatchInterfaceServices', () => {
 
 /*
 *******************************************************
-***************** Match functions *******************
+***************** Match functions *********************
 *******************************************************
 */   
   describe.each([
     {
       playcricketMatch_test: PlayCricketMatchDetail_TestData[0],
       match_Result: MatchDetail_TestResultData[0],
+    },
+    {
+      playcricketMatch_test: PlayCricketMatchDetail_TestData[1],
+      match_Result: MatchDetail_TestResultData[1],
     },
   ])('Match Functions', ({ playcricketMatch_test, match_Result }) => {
     

@@ -1,6 +1,6 @@
 // Imports
 import { Observable, from, map, filter } from 'rxjs';
-import { MatchList } from '@navestockcricketclub/match-interfaces';
+import { MatchList } from '@navestockcricketclub-monorepo-v2/interfaces-match';
 export class ComparisonService {
   /**
    * Matchs list comparison orchestrator

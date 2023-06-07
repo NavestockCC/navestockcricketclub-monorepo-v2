@@ -84,7 +84,7 @@ export class servicesMatchFirestoredb {
    */
   public updateMatchDetails(match: Match): Observable<WriteResult> {
     const matchDetailDoc = this.afs
-      .collection('Fixtures')
+      .collection('FixtureList')
       .doc(match.description.id.toString());
     return from(matchDetailDoc.set(match, { merge: true }));
   }

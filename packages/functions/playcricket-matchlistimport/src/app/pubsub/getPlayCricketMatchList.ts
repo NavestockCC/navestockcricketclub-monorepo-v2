@@ -79,7 +79,7 @@ export const getPlayCricketMatchListPubSub = onMessagePublished(
           switchMap((matchList) =>
             forkJoin({
               //Write matchlist to pubsub
-              matchListPubsubPublish: psMessage.publishPubSubMessage(
+              matchListPubsubPublish: psMessage.publishPubSuMessage(
                 'PlayCricket_Match_List_Data',
                 matchList
               ),
@@ -94,7 +94,7 @@ export const getPlayCricketMatchListPubSub = onMessagePublished(
          */
         return await lastValueFrom(getPCMactchLlistPS)
                       .catch(
-                        e => logger.debug(`getPlayCricketMatchListPubSub: ${e}`)
+                        e => logger.error(`getPlayCricketMatchListPubSub: ${e}`)
                       );
   }
 

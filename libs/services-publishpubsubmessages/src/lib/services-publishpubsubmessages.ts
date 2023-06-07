@@ -8,7 +8,7 @@ export class PublishPubSubMessage {
    */
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  public publishPubSubMessage(pubsubTopicName: string, messagedata: any) {
+  public publishPubSuMessage(pubsubTopicName: string, messagedata: any) {
     const pubSubClient = new PubSub();
     let dataBuffer: Buffer  | undefined = undefined;
 
@@ -67,7 +67,7 @@ export class PublishPubSubMessage {
         map((r) => r),
         retry(2),
         catchError((error) => {
-          functions.logger.debug(`pubsubTopic: ${error}`)
+          functions.logger.error('pubsubTopic(' + pubsubTopicName + '): ' + error)
           if(error.code == 5) {
           const managedError = from(pubSubClient.createTopic(pubsubTopicName))
           .pipe(

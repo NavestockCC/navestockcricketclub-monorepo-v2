@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'functions-playcricke-matchdetailimport',
+  displayName: 'functions-playcricket- matchdetailimport',
   preset: '../../../jest.preset.js',
   globals: {
     'ts-jest': {
@@ -13,5 +13,5 @@ export default {
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory:
-    '../../../coverage/packages/functions/playcricke-matchdetailimport',
+    '../../../coverage/packages/functions/playcricket- matchdetailimport',
 };

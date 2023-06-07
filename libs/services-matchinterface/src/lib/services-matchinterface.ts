@@ -1,6 +1,5 @@
 import { Timestamp } from 'firebase-admin/firestore';
-import { filter, first, forkJoin, iif, last, map, mergeMap, Observable, of, retry, skipWhile, tap, throwIfEmpty, toArray } from 'rxjs';
-import * as stripTags from 'striptags';
+import { filter, first, forkJoin, last, map, mergeMap, Observable, of, retry, skipWhile, throwIfEmpty, toArray } from 'rxjs';
 
 import {
   MatchDescription,
@@ -187,7 +186,9 @@ export class MatchInterfaceServices {
       // Remove all HTM tags from match_notes
       map((mtchData) => {
         if (mtchData.match_notes != undefined) {
-          mtchData.match_notes = stripTags(mtchData.match_notes);
+          mtchData.match_notes = mtchData.match_notes.replace(/&nbsp;|&amp;/g, ' ');
+          mtchData.match_notes = mtchData.match_notes.replace(/<[^>]+>/g, '');
+          mtchData.match_notes = mtchData.match_notes.trim();
         }
         return mtchData as MatchDescription;
       }),
@@ -241,7 +242,7 @@ export class MatchInterfaceServices {
       },
     ];
 
-  const matchId: number =  match.id!;
+  const matchId: number =  match.id;
 
   return matchObservable.pipe(
       filter(
@@ -290,7 +291,7 @@ export class MatchInterfaceServices {
       },
     ];
 
-  const matchId: number =  playcricketMatchDetail.id!;
+  const matchId: number =  playcricketMatchDetail.id;
 
 
   return of(playcricketMatchDetail).pipe(
@@ -761,7 +762,7 @@ export class MatchInterfaceServices {
     ) {
       return attributeValue.toLocaleLowerCase() === 'true';
     } else {
-      return attributeValue.toString();
+      return attributeValue;
     }
   }
 }

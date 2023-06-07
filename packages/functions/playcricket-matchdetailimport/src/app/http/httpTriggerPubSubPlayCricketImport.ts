@@ -27,11 +27,11 @@ export const httpPublishPlayCricetMatchToImport = functions
       const matchToImport = req.query.mid;
       const data = JSON.stringify({matchid: matchToImport});
       const publishMes = new PublishPubSubMessage();
-      publishMes.publishPubSubMessage('Match_Detail_Import', data)
+      publishMes.publishPubSuMessage('Match_Detail_Import', data)
       .subscribe({
         next: (v) => {
-          functions.logger.debug( `PubSub Message ${v} published to topic Match_Detail_Import`);
-          res.send(`Message ${v} published to Match_Detail_Import`);
+          functions.logger.info( `PubSub Message ${v} published to topic Match_Detail_Import with data: ` + data);
+          res.send(`Message ${v} published to Match_Detail_Import with data: ` + data);
         },
         error: (e) => {
           console.error(JSON.stringify(e));
