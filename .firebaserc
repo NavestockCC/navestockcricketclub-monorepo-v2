@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "test-navestock-website"
+    "default": "test-navestock-website",
+    "test_navestock": "test-navestock-website",
+    "production_navestock": "navestock-website"
+
   }
 }

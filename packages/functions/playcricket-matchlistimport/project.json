@@ -35,12 +35,28 @@
         "parallel": false
       }
     },
-    "deploy-functions": {
+    "deploy-functions-test": {
       "executor": "nx:run-commands",
       "options": {
         "commands": [
           "nx run functions-playcricket-matchlistimport:lint",
           "nx run functions-playcricket-matchlistimport:build:production",
+          "firebase use test_navestock",
+          "firebase functions:delete getplaycricketmatchlistpubsub --force",
+          "firebase functions:delete httptriggerplaycricetimport --force",
+          "firebase deploy --only functions:playcricketmatchlistimport"
+        ],
+        "color": true,
+        "parallel": false
+      }
+    },
+    "deploy-functions-production": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run functions-playcricket-matchlistimport:lint",
+          "nx run functions-playcricket-matchlistimport:build:production",
+          "firebase use production_navestock",
           "firebase functions:delete getplaycricketmatchlistpubsub --force",
           "firebase functions:delete httptriggerplaycricetimport --force",
           "firebase deploy --only functions:playcricketmatchlistimport"

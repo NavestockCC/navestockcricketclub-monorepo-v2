@@ -39,6 +39,7 @@ testem.log
 Thumbs.db
 
 # Firebase debug files
+*.log
 *debug.log
 ui-debug.log
 firestore-debug.log

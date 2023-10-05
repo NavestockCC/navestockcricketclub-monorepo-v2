@@ -7,15 +7,13 @@
  *
  */
 
-import * as functions from 'firebase-functions';
+import {onRequest} from 'firebase-functions/v2/https';
+import { logger } from 'firebase-functions/v2';
 import { PublishPubSubMessage } from '@navestockcricketclub-monorepo-v2/services-publishpubsubmessages'
 
 
-export const httpPublishPlayCricetMatchToImport = functions
-.region('europe-west2')
-.runWith({ memory: '128MB', timeoutSeconds: 120 })
-.https
-.onRequest(
+export const httpPublishPlayCricetMatchToImport = onRequest(
+  { timeoutSeconds: 120, region: ['europe-west2'] },
   async (req, res) => {
 
       // Retrieve data from season Param, then package to {JSON} message and push to buffer.
@@ -30,7 +28,7 @@ export const httpPublishPlayCricetMatchToImport = functions
       publishMes.publishPubSuMessage('Match_Detail_Import', data)
       .subscribe({
         next: (v) => {
-          functions.logger.info( `PubSub Message ${v} published to topic Match_Detail_Import with data: ` + data);
+          logger.info( `PubSub Message ${v} published to topic Match_Detail_Import with data: ` + data);
           res.send(`Message ${v} published to Match_Detail_Import with data: ` + data);
         },
         error: (e) => {
