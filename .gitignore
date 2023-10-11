@@ -50,3 +50,5 @@ environments
 environments/PlayCricket.ts
 environments/environment.ts
 environments/environment.prod.ts
+
+.angular
