@@ -1,0 +1,86 @@
+{
+  "name": "functions-apihello",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/functions/apihello/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/esbuild:esbuild",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/functions/apihello",
+        "format": [
+          "cjs"
+        ],
+        "main": "packages/functions/apihello/src/main.ts",
+        "tsConfig": "packages/functions/apihello/tsconfig.app.json",
+        "assets": [
+          "packages/functions/apihello/src/assets"
+        ],
+        "externalDependencies": "all",
+        "outputFileName": "index.js",
+        "generatePackageJson": true,
+        "updateBuildableProjectDepsInPackageJson": true,
+        "buildableProjectDepsInPackageJsonType": "dependencies",
+        "verbose": true,
+        "watch": false
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "lsof -t -i:9099 -i:5001 -i:8080 -i:5002 -i:8085 -i:9199 | xargs kill -9",
+          "nx run functions-apihello:lint",
+          "nx run functions-apihello:build:production",
+          "firebase emulators:start"
+        ],
+        "color": true,
+        "parallel": false
+      }
+    },
+    "deploy-functions": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run functions-apihello:lint",
+          "nx run functions-apihello:build:production",
+          "firebase functions:delete apihello --force",
+          "firebase deploy --only functions:hello  "
+        ],
+        "color": true,
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/functions/apihello/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/functions/apihello/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

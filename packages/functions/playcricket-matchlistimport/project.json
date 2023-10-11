@@ -1,0 +1,103 @@
+{
+  "name": "functions-playcricket-matchlistimport",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/functions/playcricket-matchlistimport/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/esbuild:esbuild",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/functions/playcricket-matchlistimport",
+        "format": [
+          "cjs"
+        ],
+        "main": "packages/functions/playcricket-matchlistimport/src/main.ts",
+        "tsConfig": "packages/functions/playcricket-matchlistimport/tsconfig.app.json",
+        "assets": [
+          "packages/functions/playcricket-matchlistimport/src/assets"
+        ],
+        "externalDependencies": "all",
+        "outputFileName": "index.cjs",
+        "generatePackageJson": true,
+        "updateBuildableProjectDepsInPackageJson": true,
+        "buildableProjectDepsInPackageJsonType": "dependencies",
+        "verbose": true,
+        "watch": false
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "lsof -t -i:9099 -i:5001 -i:8080 -i:5002 -i:8085 -i:9199 | xargs kill -9",
+          "nx run functions-playcricket-matchlistimport:lint",
+          "nx run functions-playcricket-matchlistimport:build:production",
+          "firebase emulators:start"
+        ],
+        "color": true,
+        "parallel": false
+      }
+    },
+    "deploy-functions-test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run functions-playcricket-matchlistimport:lint",
+          "nx run functions-playcricket-matchlistimport:build:production",
+          "firebase use test_navestock",
+          "firebase functions:delete getplaycricketmatchlistpubsub --force",
+          "firebase functions:delete httptriggerplaycricetimport --force",
+          "firebase deploy --only functions:playcricketmatchlistimport"
+        ],
+        "color": true,
+        "parallel": false
+      }
+    },
+    "deploy-functions-production": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run functions-playcricket-matchlistimport:lint",
+          "nx run functions-playcricket-matchlistimport:build:production",
+          "firebase use production_navestock",
+          "firebase functions:delete getplaycricketmatchlistpubsub --force",
+          "firebase functions:delete httptriggerplaycricetimport --force",
+          "firebase deploy --only functions:playcricketmatchlistimport"
+        ],
+        "color": true,
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/functions/playcricket-matchlistimport/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/functions/playcricket-matchlistimport/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
