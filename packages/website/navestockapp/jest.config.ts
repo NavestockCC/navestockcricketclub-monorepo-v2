@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'website-website',
+  displayName: 'website-navestockapp',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../../coverage/packages/website/website',
+  coverageDirectory: '../../../coverage/packages/website/navestockapp',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
