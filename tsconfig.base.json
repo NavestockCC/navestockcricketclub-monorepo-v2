@@ -32,6 +32,10 @@
       ],
       "@navestockcricketclub-monorepo-v2/services-publishpubsubmessages": [
         "libs/services-publishpubsubmessages/src/index.ts"
+      ],
+      "@navestockcricketclub-monorepo-v2/ui-img": ["libs/ui/img/src/index.ts"],
+      "@navestockcricketclub-monorepo-v2/ui-styles": [
+        "libs/ui/styles/src/index.ts"
       ]
     }
   },

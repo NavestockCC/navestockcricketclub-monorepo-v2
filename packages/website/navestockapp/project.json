@@ -17,7 +17,22 @@
         "tsConfig": "packages/website/navestockapp/tsconfig.app.json",
         "assets": [
           "packages/website/navestockapp/src/favicon.ico",
-          "packages/website/navestockapp/src/assets"
+          "packages/website/navestockapp/src/assets",
+          {
+            "input": "libs/ui/img/src/lib/assets/img",
+            "glob": "**/*",
+            "output": "assets/img"
+          },
+          {
+            "input": "libs/ui/img/src/lib/assets",
+            "glob": "*.ico",
+            "output": "assets"
+          },
+          {
+            "input": "libs/ui/img/src/lib/assets/icons",
+            "glob": "*.svg",
+            "output": "assets.icons"
+          }
         ],
         "styles": ["packages/website/navestockapp/src/styles.scss"],
         "scripts": []
