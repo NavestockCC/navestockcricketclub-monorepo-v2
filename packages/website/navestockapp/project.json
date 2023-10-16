@@ -34,7 +34,12 @@
             "output": "assets.icons"
           }
         ],
-        "styles": ["packages/website/navestockapp/src/styles.scss"],
+        "styles": ["packages/website/navestockapp/src/ncc-styles.scss"],
+        "stylePreprocessorOptions": {
+          "includePaths": [
+            "libs/ui/styles/src/lib/scss"
+          ]
+        },
         "scripts": []
       },
       "configurations": {
