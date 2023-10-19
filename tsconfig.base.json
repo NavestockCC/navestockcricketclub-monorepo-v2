@@ -21,6 +21,9 @@
       "@navestockcricketclub-monorepo-v2/interfaces-match": [
         "libs/interfaces-match/src/index.ts"
       ],
+      "@navestockcricketclub-monorepo-v2/interfaces-scoreboard": [
+        "libs/interfaces-scoreboard/src/index.ts"
+      ],
       "@navestockcricketclub-monorepo-v2/services-match-firestoredb": [
         "libs/services-match-firestoredb/src/index.ts"
       ],

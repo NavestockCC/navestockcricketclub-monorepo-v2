@@ -1,0 +1,20 @@
+{
+  "name": "interfaces-scoreboard",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/interfaces-scoreboard/src",
+  "prefix": "navestockcricketclub-monorepo-v2",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/interfaces-scoreboard/**/*.ts",
+          "libs/interfaces-scoreboard/**/*.html"
+        ]
+      }
+    }
+  }
+}

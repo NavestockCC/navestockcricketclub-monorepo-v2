@@ -1,0 +1,84 @@
+
+<p>Navestock Scoreboard</p>
+<form [formGroup]="scoreboardForm">
+
+    <mat-grid-list cols="3" rowHeight="3:1">
+        <div formGroupName="top">
+            <mat-grid-tile colspan="1">
+                <mat-form-field>
+                    <mat-label>Batsman 1</mat-label>
+                    <input formControlName="batsman1" matInput value=0 type="number">
+                </mat-form-field>
+            </mat-grid-tile>
+            
+            <mat-grid-tile colspan="1">
+                <mat-form-field>
+                    <mat-label>Total</mat-label>
+                    <input formControlName="teamscore" matInput value=0 type="number">
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile colspan="1">
+                <mat-form-field>
+                    <mat-label>Batsman 2</mat-label>
+                    <input formControlName="batsman2" matInput value=0 type="number">
+                </mat-form-field>
+            </mat-grid-tile>
+        </div>
+
+        <mat-grid-tile colspan="1">
+            <button mat-mini-fab color="accent" (click)="addRuns(1, 'batsman1')">
+                <mat-icon>exposure_plus_1</mat-icon>
+              </button>
+              <button mat-mini-fab color="accent" (click)="addRuns(2, 'batsman1')" >
+                <mat-icon>exposure_plus_2</mat-icon>
+              </button>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+            <button mat-mini-fab color="accent" (click)="addTeamScore(1)">
+                <mat-icon>exposure_plus_1</mat-icon>
+              </button>
+              <button mat-mini-fab color="accent" (click)="addTeamScore(2)" >
+                <mat-icon>exposure_plus_2</mat-icon>
+              </button>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+            <button mat-mini-fab color="accent" (click)="addRuns(1, 'batsman2')">
+                <mat-icon>exposure_plus_1</mat-icon>
+              </button>
+              <button mat-mini-fab color="accent" (click)="addRuns(2, 'batsman2')" >
+                <mat-icon>exposure_plus_2</mat-icon>
+              </button>
+        </mat-grid-tile>
+
+
+        <div formGroupName="bottom">
+            <mat-grid-tile colspan="1">
+                <mat-form-field>
+                    <mat-label>Overs</mat-label>
+                    <input formControlName="overs" matInput value=0 type="number">
+                </mat-form-field>
+            </mat-grid-tile>
+            
+            <mat-grid-tile colspan="1">
+                <mat-form-field>
+                    <mat-label>Wickets</mat-label>
+                    <input formControlName="wickets" matInput value=0 type="number">
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile colspan="1">
+                <mat-form-field>
+                    <mat-label>Target</mat-label>
+                    <input formControlName="target" matInput value=0 type="number">
+                </mat-form-field>
+            </mat-grid-tile>
+        </div>    
+    </mat-grid-list>
+</form>
+
+<p>scoreboardForm: {{ scoreboardForm.value | json}}</p>
+
+<P>scbv: {{scbv | async | json}}</P>
