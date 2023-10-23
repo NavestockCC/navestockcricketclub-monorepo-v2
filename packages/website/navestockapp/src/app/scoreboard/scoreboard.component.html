@@ -3,6 +3,12 @@
 <form [formGroup]="scoreboardForm">
 
     <mat-grid-list cols="3" rowHeight="3:1">
+        <mat-grid-tile colspan="3">
+            <button mat-mini-fab color="primary" (click)="zeroScoreboardFrom()">
+                <mat-icon>delete_sweep</mat-icon>
+              </button>
+        </mat-grid-tile>
+
         <div formGroupName="top">
             <mat-grid-tile colspan="1">
                 <mat-form-field>
@@ -78,9 +84,3 @@
         </div>    
     </mat-grid-list>
 </form>
-
-<p>scoreboardForm: {{ scoreboardForm.value | json}}</p>
-
-<P>scbv: {{scbv | async | json}}</P>
-
-<p> rtdb: {{scoreboardObjectValue$ | async | json}}</p>

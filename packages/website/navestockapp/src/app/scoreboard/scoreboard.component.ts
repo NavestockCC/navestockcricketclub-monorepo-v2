@@ -48,11 +48,11 @@ export class ScoreboardComponent implements OnInit{
   })
 
   private doc:DatabaseReference = ref(this.rtdb, 'scoreboardlive');
-  public scoreboardObjectValue$: Observable<Scoreboard> = objectVal(this.doc).pipe(
+  private scoreboardObjectValue$: Observable<Scoreboard> = objectVal(this.doc).pipe(
     map(resp => resp as Scoreboard)
   );
    
-  public scbv: Observable<Scoreboard> = this.scoreboardForm.valueChanges.pipe(
+  private scbv: Observable<Scoreboard> = this.scoreboardForm.valueChanges.pipe(
     map(resp => resp as Scoreboard)
   );
   
@@ -104,7 +104,8 @@ export class ScoreboardComponent implements OnInit{
     this.scoreboardForm.controls.top.controls.teamscore.setValue(teamVal.toString())
   }
 
-  scoreboardFromRTDBSync(){
+
+ private scoreboardFromRTDBSync(){
     this.scoreboardObjectValue$.pipe(
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       map(resp => resp as any),
@@ -114,7 +115,24 @@ export class ScoreboardComponent implements OnInit{
     
   }
 
-  updateRTDB(updateVal:Scoreboard){
+  zeroScoreboardFrom(){
+    const zeroVal:Scoreboard = {
+      top:{
+        batsman1: 0,
+        batsman2: 0,
+        teamscore: 0
+      },
+      bottom:{
+        wickets: 0,
+        overs: 0,
+        target: 0
+      }
+    }
+
+    this.updateRTDB(zeroVal);
+  }
+
+  private updateRTDB(updateVal:Scoreboard){
     set(this.doc, updateVal)
   }
 
