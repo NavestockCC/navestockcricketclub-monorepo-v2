@@ -1,8 +1,14 @@
 {
     "cSpell.words": [
+        "controlref",
+        "Firestore",
         "navestockapp",
         "navestockappthemepalette",
         "navestockcricketclub",
-        "scoreboardvalue"
+        "rtdb",
+        "scbv",
+        "scoreboardlive",
+        "scoreboardvalue",
+        "teamscore"
     ]
 }

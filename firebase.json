@@ -3,14 +3,21 @@
     "rules": "firebase/firestore.rules",
     "indexes": "firebase/firestore.indexes.json"
   },
-  "hosting": {
-    "public": "dist",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
-  },
+  "hosting": [
+    {
+      "public": "dist",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    },
+    {
+      "target": "website-navestockapp",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ],
   "storage": {
     "rules": "firebase/storage.rules"
   },
@@ -71,5 +78,5 @@
     "ui": {
       "enabled": true
     }
-  }  
+  }
 }

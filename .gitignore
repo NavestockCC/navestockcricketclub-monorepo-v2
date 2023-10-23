@@ -52,3 +52,5 @@ environments/environment.ts
 environments/environment.prod.ts
 
 .angular
+
+packages/website/navestockapp/src/environments/environment.ts

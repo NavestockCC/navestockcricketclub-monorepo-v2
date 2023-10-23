@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -9,9 +9,12 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 
 import {FormsModule} from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Observable, debounce, interval, map, tap } from 'rxjs';
+
+import { Database, DatabaseReference, objectVal, ref, set } from '@angular/fire/database';
 
 import { Scoreboard } from '@navestockcricketclub-monorepo-v2/interfaces-scoreboard';
+
 
 @Component({
   selector: 'ncc-app-scoreboard',
@@ -29,9 +32,8 @@ import { Scoreboard } from '@navestockcricketclub-monorepo-v2/interfaces-scorebo
   templateUrl: './scoreboard.component.html',
   styleUrls: ['./scoreboard.component.scss'],
 })
-export class ScoreboardComponent {
-
-
+export class ScoreboardComponent implements OnInit{
+  
   scoreboardForm = new FormGroup({
     top: new FormGroup({
       batsman1: new FormControl(''),
@@ -45,8 +47,30 @@ export class ScoreboardComponent {
     })
   })
 
-  scbv: Observable<any> = this.scoreboardForm.valueChanges
+  private doc:DatabaseReference = ref(this.rtdb, 'scoreboardlive');
+  public scoreboardObjectValue$: Observable<Scoreboard> = objectVal(this.doc).pipe(
+    map(resp => resp as Scoreboard)
+  );
+   
+  public scbv: Observable<Scoreboard> = this.scoreboardForm.valueChanges.pipe(
+    map(resp => resp as Scoreboard)
+  );
   
+
+  constructor(private rtdb: Database) {}
+
+  ngOnInit(): void {
+    this.scoreboardFromRTDBSync();
+    this.scbv.pipe(
+      debounce(() => interval(5000)), //if there has been no form updates for 5 seconds update the RTDB
+      tap(resp => {this.updateRTDB(resp)})
+    ).subscribe();
+  }
+ 
+
+  
+
+
   addRuns(valueToAdd:number, toWhom:string){
       let batVal = 0;
      
@@ -78,6 +102,20 @@ export class ScoreboardComponent {
 
     teamVal= teamVal + valueToAdd;
     this.scoreboardForm.controls.top.controls.teamscore.setValue(teamVal.toString())
+  }
+
+  scoreboardFromRTDBSync(){
+    this.scoreboardObjectValue$.pipe(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      map(resp => resp as any),
+      tap(resp=> {this.scoreboardForm.setValue(resp)})
+    ).subscribe();
+
+    
+  }
+
+  updateRTDB(updateVal:Scoreboard){
+    set(this.doc, updateVal)
   }
 
 }
