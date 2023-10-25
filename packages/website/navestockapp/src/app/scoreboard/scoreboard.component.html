@@ -2,13 +2,14 @@
 <p>Navestock Scoreboard</p>
 <form [formGroup]="scoreboardForm">
 
-    <mat-grid-list cols="3" rowHeight="3:1">
+    <mat-grid-list cols="3" rowHeight="4:1">
         <mat-grid-tile colspan="3">
             <button mat-mini-fab color="primary" (click)="zeroScoreboardFrom()">
                 <mat-icon>delete_sweep</mat-icon>
               </button>
-        </mat-grid-tile>
-
+    </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list cols="3" rowHeight="4rem">
         <div formGroupName="top">
             <mat-grid-tile colspan="1">
                 <mat-form-field>
@@ -31,35 +32,83 @@
                 </mat-form-field>
             </mat-grid-tile>
         </div>
-
+    </mat-grid-list>
+    <mat-grid-list cols="3" rowHeight="2.5rem">    
         <mat-grid-tile colspan="1">
-            <button mat-mini-fab color="accent" (click)="addRuns(1, 'batsman1')">
-                <mat-icon>exposure_plus_1</mat-icon>
+            <button mat-flat-button plus1  (click)="addRuns(1, 'batsman1')">
+                <mat-icon>add</mat-icon>1
               </button>
-              <button mat-mini-fab color="accent" (click)="addRuns(2, 'batsman1')" >
-                <mat-icon>exposure_plus_2</mat-icon>
+              <button mat-flat-button plus2  (click)="addRuns(2, 'batsman1')" >
+                <mat-icon>add</mat-icon>2
+              </button>
+              <button mat-flat-button plus3 (click)="addRuns(3, 'batsman1')" >
+                <mat-icon>add</mat-icon>3
               </button>
         </mat-grid-tile>
 
         <mat-grid-tile colspan="1">
-            <button mat-mini-fab color="accent" (click)="addTeamScore(1)">
-                <mat-icon>exposure_plus_1</mat-icon>
+            <button mat-flat-button plus1 (click)="addTeamScore(1)">
+                <mat-icon>add</mat-icon>1
               </button>
-              <button mat-mini-fab color="accent" (click)="addTeamScore(2)" >
-                <mat-icon>exposure_plus_2</mat-icon>
+              <button mat-flat-button plus2 (click)="addTeamScore(2)" >
+                <mat-icon>add</mat-icon>2
+              </button>
+              <button mat-flat-button plus3 (click)="addTeamScore(3)" >
+                <mat-icon>add</mat-icon>3
               </button>
         </mat-grid-tile>
 
         <mat-grid-tile colspan="1">
-            <button mat-mini-fab color="accent" (click)="addRuns(1, 'batsman2')">
+            <button mat-flat-button plus1  (click)="addRuns(1, 'batsman2')">
                 <mat-icon>exposure_plus_1</mat-icon>
               </button>
-              <button mat-mini-fab color="accent" (click)="addRuns(2, 'batsman2')" >
+              <button mat-flat-button plus2  (click)="addRuns(2, 'batsman2')" >
                 <mat-icon>exposure_plus_2</mat-icon>
               </button>
+              <button mat-flat-button plus3 (click)="addRuns(3, 'batsman2')" >
+                <mat-icon>add</mat-icon>3
+              </button>            
         </mat-grid-tile>
 
+        <mat-grid-tile colspan="1">
+              <button mat-flat-button plus4  (click)="addRuns(4, 'batsman1')" >
+                <mat-icon>add</mat-icon>4
+              </button>
+              <button mat-flat-button plus6  (click)="addRuns(6, 'batsman1')" >
+                <mat-icon>add</mat-icon>6
+              </button>
+              <button mat-flat-button color="warn" (click)="addRuns(-1, 'batsman1')" >
+                <mat-icon>remove</mat-icon>1
+              </button> 
+        </mat-grid-tile>
 
+        <mat-grid-tile colspan="1">
+              <button mat-flat-button plus4 (click)="addTeamScore(4)" >
+                <mat-icon>add</mat-icon>4
+              </button>
+              <button mat-flat-button plus6 (click)="addTeamScore(6)" >
+                <mat-icon>add</mat-icon>6
+              </button>
+              <button mat-flat-button color="warn" (click)="addTeamScore(-1)" >
+                <mat-icon>remove</mat-icon>1
+              </button> 
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+              <button mat-flat-button plus4  (click)="addRuns(4, 'batsman2')" >
+                <mat-icon>add</mat-icon>4
+              </button>
+              <button mat-flat-button plus6  (click)="addRuns(6, 'batsman2')" >
+                <mat-icon>add</mat-icon>6
+              </button>
+              <button mat-flat-button color="warn" (click)="addRuns(-1, 'batsman2')" >
+                <mat-icon>remove</mat-icon>1
+              </button>            
+        </mat-grid-tile>
+        <mat-grid-tile colspan="3"></mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="3" rowHeight="4rem">
         <div formGroupName="bottom">
             <mat-grid-tile colspan="1">
                 <mat-form-field>
@@ -82,5 +131,28 @@
                 </mat-form-field>
             </mat-grid-tile>
         </div>    
+    </mat-grid-list>
+    <mat-grid-list cols="3" rowHeight="2.5rem">    
+        <mat-grid-tile colspan="1">
+            <button mat-flat-button plus1  (click)="addOversWickets(1, 'overs')">
+                <mat-icon>add</mat-icon>1
+            </button>
+            <button mat-flat-button color="warn" (click)="addOversWickets(-1, 'overs')">
+                <mat-icon>remove</mat-icon>1
+            </button>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+            <button mat-flat-button plus1 (click)="addOversWickets(1, 'wickets')">
+                <mat-icon>add</mat-icon>1
+            </button>
+            <button mat-flat-button color="warn" (click)="addOversWickets(-1, 'wickets')">
+                <mat-icon>remove</mat-icon>1
+            </button>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+        </mat-grid-tile>
+
     </mat-grid-list>
 </form>

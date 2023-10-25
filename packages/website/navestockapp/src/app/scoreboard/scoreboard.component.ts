@@ -48,7 +48,7 @@ export class ScoreboardComponent implements OnInit{
   })
 
   private doc:DatabaseReference = ref(this.rtdb, 'scoreboardlive');
-  private scoreboardObjectValue$: Observable<Scoreboard> = objectVal(this.doc).pipe(
+  public scoreboardObjectValue$: Observable<Scoreboard> = objectVal(this.doc).pipe(
     map(resp => resp as Scoreboard)
   );
    
@@ -104,6 +104,27 @@ export class ScoreboardComponent implements OnInit{
     this.scoreboardForm.controls.top.controls.teamscore.setValue(teamVal.toString())
   }
 
+  addOversWickets(valueToAdd:number, toWhom:string){
+    let nVal = 0;
+   
+    let controlref:FormControl;
+
+    if(toWhom == "overs"){
+      controlref = this.scoreboardForm.controls.bottom.controls.overs;
+    } else if(toWhom == "wickets"){
+      controlref = this.scoreboardForm.controls.bottom.controls.wickets;
+    } else {
+      controlref = this.scoreboardForm.controls.top.controls.teamscore;
+    }
+
+    if(controlref.value != null){
+      nVal = +controlref.value;
+    }
+
+    nVal = nVal + valueToAdd;
+    controlref.setValue(nVal.toString());
+
+}
 
  private scoreboardFromRTDBSync(){
     this.scoreboardObjectValue$.pipe(

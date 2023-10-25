@@ -1,0 +1,30 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@use '../../ncc-styles.scss' as nccstyle;
+
+
+button[mat-flat-button][plus1]{
+    background-color: mat.get-color-from-palette(nccstyle.$ncc-accent, 200);
+    color: mat.get-color-from-palette(nccstyle.$ncc-accent, 200-contrast);
+}
+
+button[mat-flat-button][plus2]{
+    background-color: mat.get-color-from-palette(nccstyle.$ncc-accent, 300);
+    color: mat.get-color-from-palette(nccstyle.$ncc-accent, 300-contrast);
+}
+
+button[mat-flat-button][plus3]{
+    background-color: mat.get-color-from-palette(nccstyle.$ncc-accent, 500);
+    color: mat.get-color-from-palette(nccstyle.$ncc-accent, 500-contrast);
+}
+
+button[mat-flat-button][plus4]{
+    background-color: mat.get-color-from-palette(nccstyle.$ncc-accent, 700);
+    color: mat.get-color-from-palette(nccstyle.$ncc-accent, 700-contrast);
+}
+
+button[mat-flat-button][plus6]{
+    background-color: mat.get-color-from-palette(nccstyle.$ncc-accent, 900);
+    color: mat.get-color-from-palette(nccstyle.$ncc-accent, 900-contrast);
+}

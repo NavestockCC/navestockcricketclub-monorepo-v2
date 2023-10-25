@@ -1,5 +1,5 @@
 // define a real custom palette (using http://mcg.mbitson.com)
-$md-nccgreen: (
+$nccgreen: (
     50 : #eef2eb,
     100 : #d5dfcd,
     200 : #b9c9ac,
@@ -33,7 +33,7 @@ $md-nccgreen: (
 );
 
 
-$md-nccgold: (
+$nccgold: (
     50 : #faf7eb,
     100 : #f3eccd,
     200 : #ebe0ac,
@@ -58,7 +58,7 @@ $md-nccgold: (
         600 : #000000,
         700 : #000000,
         800 : #000000,
-        900 : #000000,
+        900 : #ffffff,
         A100 : #000000,
         A200 : #000000,
         A400 : #ffffff,
