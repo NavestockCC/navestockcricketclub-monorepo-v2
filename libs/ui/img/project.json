@@ -1,0 +1,17 @@
+{
+  "name": "ui-img",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/ui/img/src",
+  "prefix": "navestockcricketclub-monorepo-v2",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/ui/img/**/*.ts", "libs/ui/img/**/*.html"]
+      }
+    }
+  }
+}

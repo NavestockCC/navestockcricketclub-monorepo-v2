@@ -1,0 +1,20 @@
+{
+  "name": "ui-styles",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/ui/styles/src",
+  "prefix": "navestockcricketclub-monorepo-v2",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/ui/styles/**/*.ts",
+          "libs/ui/styles/**/*.html"
+        ]
+      }
+    }
+  }
+}
