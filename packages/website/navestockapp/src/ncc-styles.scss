@@ -40,9 +40,19 @@ $ncc-theme: mat.define-light-theme((
 
 
 /* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
+*,
+* ::before,
+* ::after {
+  box-sizing: border-box;
+}
+html, body { 
+  display: inline;
+  height: 100%; }
 body {  margin: 0; 
         font-family: Roboto, "Helvetica Neue", sans-serif;
-        background: mat.get-color-from-palette($ncc-primary, 'lighter');
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
+        background: white;
       }
+div{
+  display: inline;
+}

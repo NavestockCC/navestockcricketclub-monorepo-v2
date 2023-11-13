@@ -1,0 +1,45 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../ncc-styles.scss' as nccstyle;
+
+
+.ncc-app-main-nav{
+   display: grid;
+    grid-template-columns: 9rem auto;
+    align-items: end;
+    grid-gap: 1rem;
+    grid-template-areas: 
+    'ncclogo nccsponsors'
+    'ncclogo appmenu';
+    background-color: mat.get-color-from-palette(nccstyle.$ncc-primary);
+    color: mat.get-color-from-palette(nccstyle.$ncc-accent);
+
+    border-radius: 5px;
+}
+
+.ncc-app-logo{
+    grid-area: ncclogo;
+    padding: 1rem;    
+}
+.ncc-app-logo-img{
+    max-width: 100%;
+}
+
+.ncc-app-menu{
+    grid-area: appmenu;
+    padding: 1rem;  
+}
+
+.ncc-app-sponsors{
+    grid-area: nccsponsors;
+    padding: 1rem;
+    text-align: right;
+    border-bottom: 0.01rem solid mat.get-color-from-palette(nccstyle.$ncc-accent, 500);
+}
+
+@media only screen and (min-device-width: 640px){
+    .ncc-app-main-nav{
+        grid-template-columns: 12rem auto;
+    }
+
+}
