@@ -39,7 +39,9 @@
       "@navestockcricketclub-monorepo-v2/sponsors": [
         "libs/website/ncc-sponsors/src/index.ts"
       ],
-      "@navestockcricketclub-monorepo-v2/ui-img": ["libs/ui/img/src/index.ts"],
+      "@navestockcricketclub-monorepo-v2/ui-img": [
+        "libs/ui/img/src/index.ts"
+      ],
       "@navestockcricketclub-monorepo-v2/ui-styles": [
         "libs/ui/styles/src/index.ts"
       ]

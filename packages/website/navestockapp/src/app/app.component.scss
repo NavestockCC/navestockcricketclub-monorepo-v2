@@ -11,9 +11,8 @@
     grid-template-areas: 
     'ncclogo nccsponsors'
     'ncclogo appmenu';
-    background-color: mat.get-color-from-palette(nccstyle.$ncc-primary);
-    color: mat.get-color-from-palette(nccstyle.$ncc-accent);
-
+    background-color: mat.get-color-from-palette(nccstyle.$ncc-primary, 400);
+    color: mat.get-contrast-color-from-palette(nccstyle.$ncc-primary, 400);
     border-radius: 5px;
 }
 

@@ -8,10 +8,10 @@ import {
   mixinColor,
   mixinDisableRipple,
   mixinDisabled
-} from "./chunk-X2DSSXEQ.js";
-import "./chunk-O777NXY6.js";
-import "./chunk-2RLCO3U7.js";
-import "./chunk-VUNYRJM4.js";
+} from "./chunk-CHOHHZ3N.js";
+import "./chunk-UVOVKLP2.js";
+import "./chunk-UITFTG7S.js";
+import "./chunk-L6EF22MW.js";
 import {
   ANIMATION_MODULE_TYPE,
   ChangeDetectionStrategy,
@@ -40,9 +40,8 @@ import {
   ɵɵinvalidFactory,
   ɵɵprojection,
   ɵɵprojectionDef
-} from "./chunk-2APRL72N.js";
-import "./chunk-CQXG3EQT.js";
-import "./chunk-AOF462FV.js";
+} from "./chunk-KASJYZU3.js";
+import "./chunk-FNDM4646.js";
 
 // node_modules/@angular/material/fesm2022/button.mjs
 var _c0 = ["mat-button", ""];

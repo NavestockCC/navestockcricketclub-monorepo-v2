@@ -4,6 +4,7 @@
   "projectType": "application",
   "prefix": "ncc-app",
   "sourceRoot": "packages/website/navestockapp/src",
+  "implicitDependencies": ["ui-styles"],
   "tags": [],
   "targets": {
     "build": {
