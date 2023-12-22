@@ -1,0 +1,28 @@
+:host {
+  display: block;
+}
+
+.pet-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  width: 300px;
+}
+
+.pet-img {
+  border-radius: 10px 10px 0 0;
+  width: 300px;
+}
+
+.pet-name {
+  font-weight: bolder;
+}
+
+.pet-description, .pet-headline, .pet-learn-more {
+  padding: 10px;
+}
+
+.pet-headline {
+  font-size: 18pt;
+}
