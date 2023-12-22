@@ -1,0 +1,75 @@
+/* For use in src/lib/core/theming/_palette.scss */
+@use 'sass:map';
+
+$dark-primary-text: rgba(black, 0.87);
+$dark-accent-text: rgba(black, 0.54);
+$light-primary-text: rgba(white, 0.87);
+$light-accent-text: rgba(black, 0.7);
+
+$nccPrimary: (
+    50 : #eaf5e9,
+    100 : #cce6c7,
+    200 : #aad6a2,
+    300 : #87c67d,
+    400 : #6eb961,
+    500 : #54ad45,
+    600 : #4da63e,
+    700 : #439c36,
+    800 : #3a932e,
+    900 : #29831f,
+    A100 : #c5ffbf,
+    A200 : #97ff8c,
+    A400 : #68ff59,
+    A700 : #51ff40,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$nccAccent: (
+    50 : #fff8e1,
+    100 : #ffecb5,
+    200 : #ffe083,
+    300 : #ffd451,
+    400 : #ffca2c,
+    500 : #ffc107,
+    600 : #ffbb06,
+    700 : #ffb305,
+    800 : #ffab04,
+    900 : #ff9e02,
+    A100 : #ffffff,
+    A200 : #fffaf2,
+    A400 : #ffe4bf,
+    A700 : #ffd9a6,
+    contrast: (
+        50 : $dark-accent-text,
+        100 : $dark-accent-text,
+        200 : $dark-accent-text,
+        300 : $dark-accent-text,
+        400 : $dark-accent-text,
+        500 : $light-accent-text,
+        600 : $light-accent-text,
+        700 : $light-accent-text,
+        800 : $light-accent-text,
+        900 : $light-accent-text,
+        A100 : $dark-accent-text,
+        A200 : $light-accent-text,
+        A400 : $light-accent-text,
+        A700 : $light-accent-text,
+    )
+);
+
+

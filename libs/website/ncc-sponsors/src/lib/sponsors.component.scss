@@ -1,0 +1,56 @@
+
+.sponsor-grid-container{
+    display: inline-grid;
+    grid-template-columns: repeat(3, minmax(45px, 80px));
+    gap: 10px;
+    align-content: right;
+    align-items: center;
+    grid-template-areas: 
+    'sponsors-text sponsors-text sponsors-text'
+    'sponsors-blackbull sponsors-ags sponsors-essexdam';
+}
+
+.sponsor-text{
+    grid-area: sponsors-text;
+    font-size: .8rem;
+}
+
+.img-blackbull{
+    border-radius: 30%;
+    max-width: 70%;
+    height: auto;
+}
+
+.img-ags{
+    max-width: 100%;
+    height: auto;
+}
+
+.img-essexdem{
+    max-width: 100%;
+    height: auto;
+    background-color: #feca10;
+    border-radius: 10%;
+    padding: 2%;
+}
+
+.sponsor-blackbull{
+    grid-area: sponsors-blackbull;
+}
+
+.sponsor-ags{
+    grid-area: sponsors-ags;
+}
+
+.sponsor-essexdam{
+    grid-area: sponsors-essexdam;
+}
+
+@media only screen and (min-device-width: 640px){
+    .sponsor-grid-container{
+        grid-template-columns: 5fr repeat(3, minmax(45px, 80px));
+        grid-template-areas: 
+        'sponsors-text sponsors-blackbull sponsors-ags sponsors-essexdam';
+    }
+
+}
