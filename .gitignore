@@ -54,3 +54,4 @@ environments/environment.prod.ts
 .angular
 
 packages/website/navestockapp/src/environments/environment.ts
+.angular/cache/16.2.5/website-navestockapp/.tsbuildinfo
