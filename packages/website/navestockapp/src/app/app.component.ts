@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SponsorsComponent } from '@navestockcricketclub-monorepo-v2/sponsors';
-import {VerticalCardComponent} from '@ncc/component-verticalCard';
+import {WelcomeCardComponent} from './welcome-card/welcome-card.component';
+import {FindUsCardComponent} from './FindUs-card/find-us-card.component';
 
 @Component({
   standalone: true,
   imports: [
     RouterModule, 
     SponsorsComponent,
-    VerticalCardComponent
+    WelcomeCardComponent,
+    FindUsCardComponent
   ],
   selector: 'ncc-app-root',
   templateUrl: 'app.component.html',

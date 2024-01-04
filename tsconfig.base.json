@@ -43,7 +43,9 @@
       "@navestockcricketclub-monorepo-v2/ui-styles": [
         "libs/ui/styles/src/index.ts"
       ],
-      "@ncc/component-verticalCard": ["libs/website/vertical-card/src/index.ts"]
+      "@ncc-component-horizontalCard": ["libs/website/horizontal-card/src/index.ts"],
+      "@ncc-component-verticalCard": ["libs/website/vertical-card/src/index.ts"],
+      "@ncc/interface-cards": ["libs/website/interfaces/cards/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

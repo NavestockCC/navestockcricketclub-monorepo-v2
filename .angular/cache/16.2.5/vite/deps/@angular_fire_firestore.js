@@ -1,7 +1,7 @@
 import {
   AppCheckInstances,
   AuthInstances
-} from "./chunk-DKJQXTHM.js";
+} from "./chunk-RXBQZ66J.js";
 import {
   Component,
   FirebaseApp,
@@ -27,8 +27,8 @@ import {
   ɵgetAllInstancesOf,
   ɵgetDefaultInstanceOf,
   ɵzoneWrap
-} from "./chunk-PZPJNDNP.js";
-import "./chunk-L6EF22MW.js";
+} from "./chunk-LOLJ2UDE.js";
+import "./chunk-VUNYRJM4.js";
 import {
   InjectionToken,
   Injector,
@@ -38,7 +38,7 @@ import {
   setClassMetadata,
   ɵɵdefineInjector,
   ɵɵdefineNgModule
-} from "./chunk-KASJYZU3.js";
+} from "./chunk-2APRL72N.js";
 import {
   Observable,
   concatMap,
@@ -52,7 +52,8 @@ import {
   scan,
   startWith,
   timer
-} from "./chunk-FNDM4646.js";
+} from "./chunk-CQXG3EQT.js";
+import "./chunk-AOF462FV.js";
 
 // node_modules/@firebase/webchannel-wrapper/dist/esm/index.esm2017.js
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
