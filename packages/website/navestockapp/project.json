@@ -26,17 +26,17 @@
           {
             "input": "libs/ui/img/src/lib/assets/img",
             "glob": "**/*",
-            "output": "assets/img"
+            "output": "assets-img"
           },
           {
             "input": "libs/ui/img/src/lib/assets",
             "glob": "*.ico",
-            "output": "assets"
+            "output": "assets-ico"
           },
           {
             "input": "libs/ui/img/src/lib/assets/icons",
             "glob": "*.svg",
-            "output": "assets.icons"
+            "output": "assets-icons"
           }
         ],
         "styles": [

@@ -14,7 +14,7 @@ export class FindUsCardComponent {
   cardData: cardContent = {
     headline: 'Where To Find Us',
     description: 'The Green, Navestockside, CM14 5SD',
-    card_image: '/libs/ui/img/src/lib/assets/img/NavestockCricketMap.png',
+    card_image: 'assets-img/NavestockCricketMap.png',
     learn_more_route:'details'
   }
 }

@@ -17,7 +17,7 @@ export class WelcomeCardComponent {
     headline: 'Welcome to Navestock Cricket Club',
     byline: 'Established in 1768',
     description: 'A quintessential village cricket club in the heart of the Essex countryside, with 250 years of history.',
-    card_image: '/libs/ui/img/src/lib/assets/img/NCCPlay.png',
+    card_image: 'assets-img/NCCPlay.png',
     learn_more_route:'details'
   }
 

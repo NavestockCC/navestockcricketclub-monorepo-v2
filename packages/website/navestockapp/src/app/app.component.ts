@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SponsorsComponent } from '@navestockcricketclub-monorepo-v2/sponsors';
-import {WelcomeCardComponent} from './welcome-card/welcome-card.component';
-import {FindUsCardComponent} from './FindUs-card/find-us-card.component';
-import { RecruitmentComponent } from './recruitment/recruitment.component';
+import {WelcomeCardComponent} from './home/welcome-card/welcome-card.component';
+import {FindUsCardComponent} from './home/FindUs-card/find-us-card.component';
+import { RecruitmentComponent } from './home/recruitment/recruitment.component';
 
 @Component({
   standalone: true,
