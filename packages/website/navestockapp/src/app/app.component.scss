@@ -8,6 +8,7 @@
 
 .ncc-app-main-nav{
     margin: auto;
+    margin-top: 0.5rem;
     display: grid;
     grid-template-columns: 9rem auto;
     align-items: end;
@@ -23,12 +24,20 @@
 
 .ncc-app-main-body{
     width: 1122px;
+    
     margin: auto;
+    margin-top: 0.5rem;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 1rem;
     grid-template-areas: 
     'left_content right_content';
+}
+
+.ncc-app-recruitment{
+    width: 1122px;
+    margin: auto;
+    margin-top: 0.5rem;
 }
 
 .ncc-app-main-left_content{
