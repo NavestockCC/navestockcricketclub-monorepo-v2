@@ -1,0 +1,56 @@
+.horizontal-card-main {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 0.5 rem;
+    grid-template-areas:
+     'cardheadline'
+     'carddescription'
+     'cardlearnmore'
+     'cardimage';
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    width: 360px;
+    height: 300px;
+}
+
+.horizontal-card-headline {
+    grid-area: cardheadline;
+    align-self: start;
+    padding-top: 5px;
+    padding-left: 5px;
+
+    .main-headline {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .byline-headline {
+        font-size: 14px;
+    }
+}
+
+.horizontal-card-description{
+    grid-area: carddescription;
+    align-self: start;
+    padding-left: 5px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.horizontal-card-learn-more{
+    grid-area: cardlearnmore;
+    align-self: end;
+    padding-left: 5px;
+    font-size: 12px;
+    font-weight: normal;
+  
+  }
+
+.horizontal-card-img {
+    grid-area: cardimage;
+    align-self: end;
+    border-radius: 0px 0px 10px 10px;
+    object-fit: cover;
+    width: 360px;
+    max-height: 214px;
+}

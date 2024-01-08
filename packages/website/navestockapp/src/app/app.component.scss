@@ -2,9 +2,14 @@
 @use '@angular/material' as mat;
 @use '../ncc-styles.scss' as nccstyle;
 
+:host {
+    display: block;
+  }
 
 .ncc-app-main-nav{
-   display: grid;
+    margin: auto;
+    margin-top: 0.5rem;
+    display: grid;
     grid-template-columns: 9rem auto;
     align-items: end;
     grid-gap: 1rem;
@@ -14,6 +19,33 @@
     background-color: mat.get-color-from-palette(nccstyle.$ncc-primary, 400);
     color: mat.get-contrast-color-from-palette(nccstyle.$ncc-primary, 400);
     border-radius: 5px;
+    width: 1440px;
+}
+
+.ncc-app-main-body{
+    width: 1122px;
+    
+    margin: auto;
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 1rem;
+    grid-template-areas: 
+    'left_content right_content';
+}
+
+.ncc-app-recruitment{
+    width: 1122px;
+    margin: auto;
+    margin-top: 0.5rem;
+}
+
+.ncc-app-main-left_content{
+    grid-area: left_content;
+}
+
+.ncc-app-main-right_content{
+    grid-area: right_content;
 }
 
 .ncc-app-logo{

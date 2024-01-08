@@ -8,7 +8,7 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
-$ncc-fonts: 'system-ui, sans-serif';
+$ncc-fonts: 'system-ui';
 
 $ncc-Typography: mat.define-typography-config($font-family: $ncc-fonts,
 $headline-1: mat.define-typography-level($font-size: 96px, $font-weight: 300, $font-family: $ncc-fonts),
@@ -16,7 +16,7 @@ $headline-2: mat.define-typography-level($font-size: 60px, $font-weight: 300, $f
 $headline-3: mat.define-typography-level($font-size: 48px, $font-weight: 400, $font-family: $ncc-fonts),
 $headline-4: mat.define-typography-level($font-size: 34px, $font-weight: 400, $font-family: $ncc-fonts),
 $headline-5: mat.define-typography-level($font-size: 24px, $font-weight: 400, $font-family: s$ncc-fonts),
-$headline-6: mat.define-typography-level($font-size: 20px, $font-weight: 500, $font-family: $ncc-fonts),
+$headline-6: mat.define-typography-level($font-size: 20px, $font-weight: 700, $font-family: $ncc-fonts),
 $subtitle-1: mat.define-typography-level($font-size: 16px, $font-weight: 500, $font-family: $ncc-fonts),
 $subtitle-2: mat.define-typography-level($font-size: 14px, $font-weight: 500, $font-family: $ncc-fonts),
 $body-1: mat.define-typography-level($font-size: 16px, $font-weight: 400, $font-family: $ncc-fonts),
@@ -46,6 +46,9 @@ $ncc-theme: mat.define-light-theme((
 
 body{
   font-family: mat.font-family($ncc-Typography, 'body-1');
-  font-size: mat.font-family($ncc-Typography, 'body-1');
-  font-weight: mat.font-family($ncc-Typography, 'body-1');
+  font-size: mat.font-size($ncc-Typography, 'body-1');
+  font-weight: mat.font-weight($ncc-Typography, 'body-1');
+  margin: 0;
+  padding: 0;
+  
 }

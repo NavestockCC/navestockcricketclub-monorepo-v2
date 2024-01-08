@@ -1,0 +1,56 @@
+
+
+.vertical-card-main {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  grid-gap: 0.5 rem;
+  grid-template-areas: 
+  'cardheadline cardimage'
+  'carddescription cardimage'
+  'cardlearnmore cardimage';
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  width: 741px;
+  height: 420px;
+}
+
+
+.card-headline {
+  grid-area: cardheadline;
+  
+.main-headline{
+  font-size: 16px;
+  font-weight: bold;
+}
+.byline-headline{
+  font-size: 14px;
+}
+
+}
+
+.card-description {
+  grid-area: carddescription;
+  align-self: self-start;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.card-learn-more{
+  grid-area: cardlearnmore;
+  align-self: self-end;
+  font-size: 12px;
+  font-weight: normal;
+
+}
+
+.card-img {
+  grid-area: cardimage;
+  border-radius:  0px 10px 10px 0px;
+  max-height: 420px;
+  width: 475px;
+}
+
+.card-description, .card-headline, .card-learn-more {
+  padding: 10px;
+}
+

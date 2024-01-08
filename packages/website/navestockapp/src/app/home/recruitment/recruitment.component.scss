@@ -1,0 +1,56 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../../../ncc-styles.scss' as nccstyle;
+
+
+.recruitment-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    'message image call';
+    height: 90px;
+    width: 100%;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, red, #FF9292, red);
+}
+
+.recruitment-message{
+    grid-area: message;
+    color: white;
+    .message-headline{
+        margin-top: 10px;
+        margin-left: 10px;
+        font-size: mat.font-size(nccstyle.$ncc-Typography, 'headline-6');
+        font-weight: mat.font-weight(nccstyle.$ncc-Typography, 'headline-6');
+    }
+    .message-byline{
+        margin-left: 20px;
+        font-size: mat.font-size(nccstyle.$ncc-Typography, 'subtitle-2');
+        font-weight: mat.font-weight(nccstyle.$ncc-Typography, 'subtitle-2');
+    }
+}
+
+.recruitment-image{
+    grid-area: image;
+    height: 90px;
+    justify-self: center;
+    width:fit-content;
+}
+
+.recruitment-call{
+    grid-area: call;
+    align-self: end;
+    justify-self: end;
+    padding: 10px;
+    font-size: mat.font-size(nccstyle.$ncc-Typography, 'subtitle-2');
+    font-weight: mat.font-weight(nccstyle.$ncc-Typography, 'subtitle-2');
+    .call-headline{
+        color: white;
+    }
+    .call-action{
+        background-color: #EAD07F;
+        border-radius: 5px;
+        padding: 5px;
+        width:fit-content;
+    }
+}
