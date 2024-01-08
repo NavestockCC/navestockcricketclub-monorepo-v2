@@ -1,6 +1,6 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
-@use '../ncc-styles.scss' as nccstyle;
+@use 'ncc_material_theme' as ncc_theme;
 
 :host {
     display: block;
@@ -16,8 +16,8 @@
     grid-template-areas: 
     'ncclogo nccsponsors'
     'ncclogo appmenu';
-    background-color: mat.get-color-from-palette(nccstyle.$ncc-primary, 400);
-    color: mat.get-contrast-color-from-palette(nccstyle.$ncc-primary, 400);
+    background-color: mat.get-color-from-palette(ncc_theme.$ncc-primary, 400);
+    color: mat.get-contrast-color-from-palette(ncc_theme.$ncc-primary, 400);
     border-radius: 5px;
     width: 1440px;
 }
@@ -65,7 +65,7 @@
     grid-area: nccsponsors;
     padding: 1rem;
     text-align: right;
-    border-bottom: 0.01rem solid mat.get-color-from-palette(nccstyle.$ncc-accent, 500);
+    border-bottom: 0.01rem solid mat.get-color-from-palette(ncc_theme.$ncc-accent, 500);
 }
 
 @media only screen and (min-device-width: 640px){

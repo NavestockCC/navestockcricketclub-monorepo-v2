@@ -1,6 +1,6 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
-@use '../../../ncc-styles.scss' as nccstyle;
+@use 'ncc_material_theme' as ncc_theme;
 
 
 .recruitment-container{
@@ -20,13 +20,13 @@
     .message-headline{
         margin-top: 10px;
         margin-left: 10px;
-        font-size: mat.font-size(nccstyle.$ncc-Typography, 'headline-6');
-        font-weight: mat.font-weight(nccstyle.$ncc-Typography, 'headline-6');
+        font-size: mat.font-size(ncc_theme.$ncc-Typography, 'headline-6');
+        font-weight: mat.font-weight(ncc_theme.$ncc-Typography, 'headline-6');
     }
     .message-byline{
         margin-left: 20px;
-        font-size: mat.font-size(nccstyle.$ncc-Typography, 'subtitle-2');
-        font-weight: mat.font-weight(nccstyle.$ncc-Typography, 'subtitle-2');
+        font-size: mat.font-size(ncc_theme.$ncc-Typography, 'subtitle-2');
+        font-weight: mat.font-weight(ncc_theme.$ncc-Typography, 'subtitle-2');
     }
 }
 
@@ -42,8 +42,8 @@
     align-self: end;
     justify-self: end;
     padding: 10px;
-    font-size: mat.font-size(nccstyle.$ncc-Typography, 'subtitle-2');
-    font-weight: mat.font-weight(nccstyle.$ncc-Typography, 'subtitle-2');
+    font-size: mat.font-size(ncc_theme.$ncc-Typography, 'subtitle-2');
+    font-weight: mat.font-weight(ncc_theme.$ncc-Typography, 'subtitle-2');
     .call-headline{
         color: white;
     }

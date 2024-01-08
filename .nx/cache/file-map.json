@@ -106,64 +106,36 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": ".editorconfig",
-        "hash": "5443105041930014821"
-      },
-      {
-        "file": ".eslintrc.json",
-        "hash": "1659929058009100827"
-      },
-      {
-        "file": ".firebaserc",
-        "hash": "7850311447247332437"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "1028460685396975827"
-      },
-      {
-        "file": ".prettierignore",
-        "hash": "3356760868306086659"
-      },
-      {
-        "file": ".prettierrc",
-        "hash": "16267754514737964994"
-      },
-      {
-        "file": ".vscode/extensions.json",
-        "hash": "235626400633494639"
-      },
-      {
-        "file": ".vscode/settings.json",
-        "hash": "5202820425863059535"
+        "file": "tools/generators/.gitkeep",
+        "hash": "3244421341483603138"
       },
       {
         "file": "README.md",
         "hash": "685209414459278953"
       },
       {
-        "file": "firebase.json",
-        "hash": "16087016500260822576"
-      },
-      {
-        "file": "firebase/firestore.indexes.json",
-        "hash": "2048261650710551311"
-      },
-      {
         "file": "firebase/firestore.rules",
         "hash": "16943271470384861525"
       },
       {
-        "file": "firebase/storage.rules",
-        "hash": "15153294454150120176"
+        "file": ".eslintrc.json",
+        "hash": "1659929058009100827"
       },
       {
-        "file": "jest.config.ts",
-        "hash": "2950215254536237782"
+        "file": "packages/.gitkeep",
+        "hash": "3244421341483603138"
       },
       {
-        "file": "jest.preset.js",
-        "hash": "2772139696069860212"
+        "file": ".firebaserc",
+        "hash": "7850311447247332437"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "3356760868306086659"
+      },
+      {
+        "file": "firebase.json",
+        "hash": "16087016500260822576"
       },
       {
         "file": "nx.json",
@@ -174,47 +146,212 @@
         "hash": "18168550853045751647"
       },
       {
-        "file": "package.json",
-        "hash": "2917790573410537814"
-      },
-      {
-        "file": "packages/.gitkeep",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "tools/generators/.gitkeep",
-        "hash": "3244421341483603138"
-      },
-      {
         "file": "tools/tsconfig.tools.json",
         "hash": "16088922570277978783"
       },
       {
         "file": "tsconfig.base.json",
         "hash": "4515335234288528887"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "2772139696069860212"
+      },
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": "firebase/storage.rules",
+        "hash": "15153294454150120176"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "2950215254536237782"
+      },
+      {
+        "file": "firebase/firestore.indexes.json",
+        "hash": "2048261650710551311"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "235626400633494639"
+      },
+      {
+        "file": ".vscode/settings.json",
+        "hash": "5202820425863059535"
+      },
+      {
+        "file": "package.json",
+        "hash": "2917790573410537814"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "1028460685396975827"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
       }
     ],
     "projectFileMap": {
-      "functions-playcricket-matchdetailimport": [
+      "services-playcricketapi": [
         {
-          "file": "packages/functions/playcricket-matchdetailimport/.eslintrc.json",
+          "file": "libs/services-playcricketapi/.babelrc",
+          "hash": "14637968239574891430"
+        },
+        {
+          "file": "libs/services-playcricketapi/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/services-playcricketapi/README.md",
+          "hash": "12386827684958273387"
+        },
+        {
+          "file": "libs/services-playcricketapi/jest.config.ts",
+          "hash": "10056924458759570757"
+        },
+        {
+          "file": "libs/services-playcricketapi/project.json",
+          "hash": "11782679702695352564"
+        },
+        {
+          "file": "libs/services-playcricketapi/src/index.ts",
+          "hash": "8026039890109264459"
+        },
+        {
+          "file": "libs/services-playcricketapi/src/lib/services-playcricketapi.ts",
+          "hash": "372629530457262963",
+          "deps": [
+            "npm:axios",
+            "npm:rxjs",
+            "npm:../../../../environments/PlayCricket",
+            "interface-playcricket"
+          ]
+        },
+        {
+          "file": "libs/services-playcricketapi/tsconfig.json",
+          "hash": "17079550796797979564"
+        },
+        {
+          "file": "libs/services-playcricketapi/tsconfig.lib.json",
+          "hash": "1398023143379268451"
+        },
+        {
+          "file": "libs/services-playcricketapi/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        }
+      ],
+      "services-match-firestoredb": [
+        {
+          "file": "libs/services-match-firestoredb/.babelrc",
+          "hash": "14637968239574891430"
+        },
+        {
+          "file": "libs/services-match-firestoredb/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/services-match-firestoredb/README.md",
+          "hash": "10274572290469957738"
+        },
+        {
+          "file": "libs/services-match-firestoredb/jest.config.ts",
+          "hash": "7553204074412898867"
+        },
+        {
+          "file": "libs/services-match-firestoredb/project.json",
+          "hash": "12353010041208935973"
+        },
+        {
+          "file": "libs/services-match-firestoredb/src/index.ts",
+          "hash": "2382300653581281377"
+        },
+        {
+          "file": "libs/services-match-firestoredb/src/lib/services-match-firestoredb.ts",
+          "hash": "17767022728088087694",
+          "deps": [
+            "npm:firebase-admin/firestore",
+            "npm:rxjs",
+            "interfaces-match"
+          ]
+        },
+        {
+          "file": "libs/services-match-firestoredb/tsconfig.json",
+          "hash": "17079550796797979564"
+        },
+        {
+          "file": "libs/services-match-firestoredb/tsconfig.lib.json",
+          "hash": "1398023143379268451"
+        },
+        {
+          "file": "libs/services-match-firestoredb/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        }
+      ],
+      "functions-apihello": [
+        {
+          "file": "packages/functions/api-hello/.eslintrc.json",
           "hash": "9703569748258640057"
         },
         {
-          "file": "packages/functions/playcricket-matchdetailimport/jest.config.ts",
-          "hash": "14970869245940984238"
+          "file": "packages/functions/api-hello/jest.config.ts",
+          "hash": "8147873660135243274"
         },
         {
-          "file": "packages/functions/playcricket-matchdetailimport/project.json",
-          "hash": "18033363126926594292"
+          "file": "packages/functions/api-hello/project.json",
+          "hash": "17609327306183124127"
         },
         {
-          "file": "packages/functions/playcricket-matchdetailimport/src/app/.gitkeep",
+          "file": "packages/functions/api-hello/src/app/.gitkeep",
           "hash": "3244421341483603138"
         },
         {
-          "file": "packages/functions/playcricket-matchdetailimport/src/app/http/httpTriggerPubSubPlayCricketImport.ts",
-          "hash": "860591017466301491",
+          "file": "packages/functions/api-hello/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "packages/functions/api-hello/src/main.ts",
+          "hash": "390089214881313651",
+          "deps": [
+            "npm:firebase-functions/v2",
+            "npm:firebase-admin/app"
+          ]
+        },
+        {
+          "file": "packages/functions/api-hello/tsconfig.app.json",
+          "hash": "4049200675747760668"
+        },
+        {
+          "file": "packages/functions/api-hello/tsconfig.json",
+          "hash": "14785519187273610601"
+        },
+        {
+          "file": "packages/functions/api-hello/tsconfig.spec.json",
+          "hash": "9110660443763673899"
+        }
+      ],
+      "functions-playcricket-matchlistimport": [
+        {
+          "file": "packages/functions/playcricket-matchlistimport/.eslintrc.json",
+          "hash": "9703569748258640057"
+        },
+        {
+          "file": "packages/functions/playcricket-matchlistimport/jest.config.ts",
+          "hash": "7520985523187999592"
+        },
+        {
+          "file": "packages/functions/playcricket-matchlistimport/project.json",
+          "hash": "16572169059866596071"
+        },
+        {
+          "file": "packages/functions/playcricket-matchlistimport/src/app/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "packages/functions/playcricket-matchlistimport/src/app/http/httpTriggerPubSubPlayCricketImport.ts",
+          "hash": "11182864871607954398",
           "deps": [
             "npm:firebase-functions/v2/https",
             "npm:firebase-functions/v2",
@@ -222,91 +359,129 @@
           ]
         },
         {
-          "file": "packages/functions/playcricket-matchdetailimport/src/app/pubsub/getPlayCricketMatchDetails.ts",
-          "hash": "10581892101974071375",
+          "file": "packages/functions/playcricket-matchlistimport/src/app/pubsub/getPlayCricketMatchList.ts",
+          "hash": "12703446256882570247",
           "deps": [
             "npm:firebase-functions/v2/pubsub",
             "npm:firebase-functions/v2",
+            "npm:rxjs/operators",
             "npm:rxjs",
-            "interface-playcricket",
-            "interfaces-match",
-            "services-playcricketapi",
-            "services-match-firestoredb",
-            "services-matchinterface"
-          ]
-        },
-        {
-          "file": "packages/functions/playcricket-matchdetailimport/src/app/pubsub/playcricketMatchListCompare.ts",
-          "hash": "826878820802046137",
-          "deps": [
-            "npm:firebase-functions/v2/pubsub",
-            "npm:firebase-functions/v2",
-            "interfaces-match",
-            "services-match-firestoredb",
             "services-publishpubsubmessages",
-            "npm:rxjs"
-          ]
-        },
-        {
-          "file": "packages/functions/playcricket-matchdetailimport/src/app/services/comparison.service.ts",
-          "hash": "9058503078165538693",
-          "deps": [
-            "npm:rxjs",
+            "services-match-firestoredb",
+            "services-playcricketapi",
+            "interface-playcricket",
             "interfaces-match"
           ]
         },
         {
-          "file": "packages/functions/playcricket-matchdetailimport/src/assets/.gitkeep",
+          "file": "packages/functions/playcricket-matchlistimport/src/assets/.gitkeep",
           "hash": "3244421341483603138"
         },
         {
-          "file": "packages/functions/playcricket-matchdetailimport/src/main.ts",
-          "hash": "13848111533239274495",
+          "file": "packages/functions/playcricket-matchlistimport/src/main.ts",
+          "hash": "18418319041637112080",
           "deps": [
             "npm:firebase-admin/app"
           ]
         },
         {
-          "file": "packages/functions/playcricket-matchdetailimport/tsconfig.app.json",
+          "file": "packages/functions/playcricket-matchlistimport/tsconfig.app.json",
           "hash": "4049200675747760668"
         },
         {
-          "file": "packages/functions/playcricket-matchdetailimport/tsconfig.json",
+          "file": "packages/functions/playcricket-matchlistimport/tsconfig.json",
           "hash": "14785519187273610601"
         },
         {
-          "file": "packages/functions/playcricket-matchdetailimport/tsconfig.spec.json",
+          "file": "packages/functions/playcricket-matchlistimport/tsconfig.spec.json",
           "hash": "9110660443763673899"
         }
       ],
-      "interfaces-scoreboard": [
+      "interface-playcricket": [
         {
-          "file": "libs/interfaces-scoreboard/.eslintrc.json",
-          "hash": "11525843981342747207"
+          "file": "libs/interface-playcricket/.babelrc",
+          "hash": "14637968239574891430"
         },
         {
-          "file": "libs/interfaces-scoreboard/README.md",
-          "hash": "7161215133385058685"
+          "file": "libs/interface-playcricket/.eslintrc.json",
+          "hash": "13800677001662881425"
         },
         {
-          "file": "libs/interfaces-scoreboard/project.json",
-          "hash": "6389050277976709262"
+          "file": "libs/interface-playcricket/README.md",
+          "hash": "1409914507539823574"
         },
         {
-          "file": "libs/interfaces-scoreboard/src/index.ts",
-          "hash": "4054818588683536413"
+          "file": "libs/interface-playcricket/jest.config.ts",
+          "hash": "7799950794112557445"
         },
         {
-          "file": "libs/interfaces-scoreboard/src/lib/interfaces-scoreboard.component.ts",
-          "hash": "4956530439053623331"
+          "file": "libs/interface-playcricket/project.json",
+          "hash": "17913850765886629009"
         },
         {
-          "file": "libs/interfaces-scoreboard/tsconfig.json",
-          "hash": "5777024872976636135"
+          "file": "libs/interface-playcricket/src/index.ts",
+          "hash": "18163368635442838646"
         },
         {
-          "file": "libs/interfaces-scoreboard/tsconfig.lib.json",
-          "hash": "7011189300034302924"
+          "file": "libs/interface-playcricket/src/lib/interface-playcricket.ts",
+          "hash": "16265817239732821785"
+        },
+        {
+          "file": "libs/interface-playcricket/tsconfig.json",
+          "hash": "17079550796797979564"
+        },
+        {
+          "file": "libs/interface-playcricket/tsconfig.lib.json",
+          "hash": "1398023143379268451"
+        },
+        {
+          "file": "libs/interface-playcricket/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        }
+      ],
+      "interfaces-match": [
+        {
+          "file": "libs/interfaces-match/.babelrc",
+          "hash": "14637968239574891430"
+        },
+        {
+          "file": "libs/interfaces-match/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "libs/interfaces-match/README.md",
+          "hash": "13403131261182425870"
+        },
+        {
+          "file": "libs/interfaces-match/jest.config.ts",
+          "hash": "4193545205751809527"
+        },
+        {
+          "file": "libs/interfaces-match/project.json",
+          "hash": "16881658047499800547"
+        },
+        {
+          "file": "libs/interfaces-match/src/index.ts",
+          "hash": "2264717840299083021"
+        },
+        {
+          "file": "libs/interfaces-match/src/lib/interfaces-match.ts",
+          "hash": "18229693703954229052",
+          "deps": [
+            "npm:firebase-admin/firestore"
+          ]
+        },
+        {
+          "file": "libs/interfaces-match/tsconfig.json",
+          "hash": "12834038490315927699"
+        },
+        {
+          "file": "libs/interfaces-match/tsconfig.lib.json",
+          "hash": "8188472110264778699"
+        },
+        {
+          "file": "libs/interfaces-match/tsconfig.spec.json",
+          "hash": "6514620907549802163"
         }
       ],
       "vertical-card": [
@@ -365,213 +540,6 @@
         {
           "file": "libs/website/vertical-card/tsconfig.spec.json",
           "hash": "7159729809249402441"
-        }
-      ],
-      "interfaces-match": [
-        {
-          "file": "libs/interfaces-match/.babelrc",
-          "hash": "14637968239574891430"
-        },
-        {
-          "file": "libs/interfaces-match/.eslintrc.json",
-          "hash": "13800677001662881425"
-        },
-        {
-          "file": "libs/interfaces-match/README.md",
-          "hash": "13403131261182425870"
-        },
-        {
-          "file": "libs/interfaces-match/jest.config.ts",
-          "hash": "4193545205751809527"
-        },
-        {
-          "file": "libs/interfaces-match/project.json",
-          "hash": "16881658047499800547"
-        },
-        {
-          "file": "libs/interfaces-match/src/index.ts",
-          "hash": "2264717840299083021"
-        },
-        {
-          "file": "libs/interfaces-match/src/lib/interfaces-match.ts",
-          "hash": "18229693703954229052",
-          "deps": [
-            "npm:firebase-admin/firestore"
-          ]
-        },
-        {
-          "file": "libs/interfaces-match/tsconfig.json",
-          "hash": "12834038490315927699"
-        },
-        {
-          "file": "libs/interfaces-match/tsconfig.lib.json",
-          "hash": "8188472110264778699"
-        },
-        {
-          "file": "libs/interfaces-match/tsconfig.spec.json",
-          "hash": "6514620907549802163"
-        }
-      ],
-      "sponsors": [
-        {
-          "file": "libs/website/ncc-sponsors/.eslintrc.json",
-          "hash": "12395706354335386373"
-        },
-        {
-          "file": "libs/website/ncc-sponsors/README.md",
-          "hash": "16311253413668848253"
-        },
-        {
-          "file": "libs/website/ncc-sponsors/jest.config.ts",
-          "hash": "5577881556609349258"
-        },
-        {
-          "file": "libs/website/ncc-sponsors/project.json",
-          "hash": "2335085207825649534"
-        },
-        {
-          "file": "libs/website/ncc-sponsors/src/index.ts",
-          "hash": "16865701890735783429"
-        },
-        {
-          "file": "libs/website/ncc-sponsors/src/lib/sponsors.component.html",
-          "hash": "12905218484825749904"
-        },
-        {
-          "file": "libs/website/ncc-sponsors/src/lib/sponsors.component.scss",
-          "hash": "16189612654021854477"
-        },
-        {
-          "file": "libs/website/ncc-sponsors/src/lib/sponsors.component.ts",
-          "hash": "6948973698103203554",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common"
-          ]
-        },
-        {
-          "file": "libs/website/ncc-sponsors/src/test-setup.ts",
-          "hash": "12935735732682149507",
-          "deps": [
-            "npm:jest-preset-angular/setup-jest"
-          ]
-        },
-        {
-          "file": "libs/website/ncc-sponsors/tsconfig.json",
-          "hash": "8526453262384300416"
-        },
-        {
-          "file": "libs/website/ncc-sponsors/tsconfig.lib.json",
-          "hash": "6020606002228403423"
-        },
-        {
-          "file": "libs/website/ncc-sponsors/tsconfig.spec.json",
-          "hash": "7159729809249402441"
-        }
-      ],
-      "horizontal-card": [
-        {
-          "file": "libs/website/horizontal-card/.eslintrc.json",
-          "hash": "5081357633387917168"
-        },
-        {
-          "file": "libs/website/horizontal-card/README.md",
-          "hash": "15634795981767277077"
-        },
-        {
-          "file": "libs/website/horizontal-card/jest.config.ts",
-          "hash": "314329480406416014"
-        },
-        {
-          "file": "libs/website/horizontal-card/project.json",
-          "hash": "11441623715769430095"
-        },
-        {
-          "file": "libs/website/horizontal-card/src/index.ts",
-          "hash": "1436069848948021157"
-        },
-        {
-          "file": "libs/website/horizontal-card/src/lib/horizontal-card.component.html",
-          "hash": "11563743336675284526"
-        },
-        {
-          "file": "libs/website/horizontal-card/src/lib/horizontal-card.component.scss",
-          "hash": "13177120663092139229"
-        },
-        {
-          "file": "libs/website/horizontal-card/src/lib/horizontal-card.component.ts",
-          "hash": "896775674745238067",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "interface-cards"
-          ]
-        },
-        {
-          "file": "libs/website/horizontal-card/src/test-setup.ts",
-          "hash": "12935735732682149507",
-          "deps": [
-            "npm:jest-preset-angular/setup-jest"
-          ]
-        },
-        {
-          "file": "libs/website/horizontal-card/tsconfig.json",
-          "hash": "8526453262384300416"
-        },
-        {
-          "file": "libs/website/horizontal-card/tsconfig.lib.json",
-          "hash": "6020606002228403423"
-        },
-        {
-          "file": "libs/website/horizontal-card/tsconfig.spec.json",
-          "hash": "7159729809249402441"
-        }
-      ],
-      "services-match-firestoredb": [
-        {
-          "file": "libs/services-match-firestoredb/.babelrc",
-          "hash": "14637968239574891430"
-        },
-        {
-          "file": "libs/services-match-firestoredb/.eslintrc.json",
-          "hash": "13800677001662881425"
-        },
-        {
-          "file": "libs/services-match-firestoredb/README.md",
-          "hash": "10274572290469957738"
-        },
-        {
-          "file": "libs/services-match-firestoredb/jest.config.ts",
-          "hash": "7553204074412898867"
-        },
-        {
-          "file": "libs/services-match-firestoredb/project.json",
-          "hash": "12353010041208935973"
-        },
-        {
-          "file": "libs/services-match-firestoredb/src/index.ts",
-          "hash": "2382300653581281377"
-        },
-        {
-          "file": "libs/services-match-firestoredb/src/lib/services-match-firestoredb.ts",
-          "hash": "17767022728088087694",
-          "deps": [
-            "npm:firebase-admin/firestore",
-            "npm:rxjs",
-            "interfaces-match"
-          ]
-        },
-        {
-          "file": "libs/services-match-firestoredb/tsconfig.json",
-          "hash": "17079550796797979564"
-        },
-        {
-          "file": "libs/services-match-firestoredb/tsconfig.lib.json",
-          "hash": "1398023143379268451"
-        },
-        {
-          "file": "libs/services-match-firestoredb/tsconfig.spec.json",
-          "hash": "6514620907549802163"
         }
       ],
       "ui-img": [
@@ -756,6 +724,205 @@
           "hash": "14882717054991120248"
         }
       ],
+      "functions-playcricket-matchdetailimport": [
+        {
+          "file": "packages/functions/playcricket-matchdetailimport/.eslintrc.json",
+          "hash": "9703569748258640057"
+        },
+        {
+          "file": "packages/functions/playcricket-matchdetailimport/jest.config.ts",
+          "hash": "14970869245940984238"
+        },
+        {
+          "file": "packages/functions/playcricket-matchdetailimport/project.json",
+          "hash": "18033363126926594292"
+        },
+        {
+          "file": "packages/functions/playcricket-matchdetailimport/src/app/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "packages/functions/playcricket-matchdetailimport/src/app/http/httpTriggerPubSubPlayCricketImport.ts",
+          "hash": "860591017466301491",
+          "deps": [
+            "npm:firebase-functions/v2/https",
+            "npm:firebase-functions/v2",
+            "services-publishpubsubmessages"
+          ]
+        },
+        {
+          "file": "packages/functions/playcricket-matchdetailimport/src/app/pubsub/getPlayCricketMatchDetails.ts",
+          "hash": "10581892101974071375",
+          "deps": [
+            "npm:firebase-functions/v2/pubsub",
+            "npm:firebase-functions/v2",
+            "npm:rxjs",
+            "interface-playcricket",
+            "interfaces-match",
+            "services-playcricketapi",
+            "services-match-firestoredb",
+            "services-matchinterface"
+          ]
+        },
+        {
+          "file": "packages/functions/playcricket-matchdetailimport/src/app/pubsub/playcricketMatchListCompare.ts",
+          "hash": "826878820802046137",
+          "deps": [
+            "npm:firebase-functions/v2/pubsub",
+            "npm:firebase-functions/v2",
+            "interfaces-match",
+            "services-match-firestoredb",
+            "services-publishpubsubmessages",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "packages/functions/playcricket-matchdetailimport/src/app/services/comparison.service.ts",
+          "hash": "9058503078165538693",
+          "deps": [
+            "npm:rxjs",
+            "interfaces-match"
+          ]
+        },
+        {
+          "file": "packages/functions/playcricket-matchdetailimport/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "packages/functions/playcricket-matchdetailimport/src/main.ts",
+          "hash": "13848111533239274495",
+          "deps": [
+            "npm:firebase-admin/app"
+          ]
+        },
+        {
+          "file": "packages/functions/playcricket-matchdetailimport/tsconfig.app.json",
+          "hash": "4049200675747760668"
+        },
+        {
+          "file": "packages/functions/playcricket-matchdetailimport/tsconfig.json",
+          "hash": "14785519187273610601"
+        },
+        {
+          "file": "packages/functions/playcricket-matchdetailimport/tsconfig.spec.json",
+          "hash": "9110660443763673899"
+        }
+      ],
+      "sponsors": [
+        {
+          "file": "libs/website/ncc-sponsors/.eslintrc.json",
+          "hash": "12395706354335386373"
+        },
+        {
+          "file": "libs/website/ncc-sponsors/README.md",
+          "hash": "16311253413668848253"
+        },
+        {
+          "file": "libs/website/ncc-sponsors/jest.config.ts",
+          "hash": "5577881556609349258"
+        },
+        {
+          "file": "libs/website/ncc-sponsors/project.json",
+          "hash": "2335085207825649534"
+        },
+        {
+          "file": "libs/website/ncc-sponsors/src/index.ts",
+          "hash": "16865701890735783429"
+        },
+        {
+          "file": "libs/website/ncc-sponsors/src/lib/sponsors.component.html",
+          "hash": "12905218484825749904"
+        },
+        {
+          "file": "libs/website/ncc-sponsors/src/lib/sponsors.component.scss",
+          "hash": "16189612654021854477"
+        },
+        {
+          "file": "libs/website/ncc-sponsors/src/lib/sponsors.component.ts",
+          "hash": "6948973698103203554",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "libs/website/ncc-sponsors/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular/setup-jest"
+          ]
+        },
+        {
+          "file": "libs/website/ncc-sponsors/tsconfig.json",
+          "hash": "8526453262384300416"
+        },
+        {
+          "file": "libs/website/ncc-sponsors/tsconfig.lib.json",
+          "hash": "6020606002228403423"
+        },
+        {
+          "file": "libs/website/ncc-sponsors/tsconfig.spec.json",
+          "hash": "7159729809249402441"
+        }
+      ],
+      "horizontal-card": [
+        {
+          "file": "libs/website/horizontal-card/.eslintrc.json",
+          "hash": "5081357633387917168"
+        },
+        {
+          "file": "libs/website/horizontal-card/README.md",
+          "hash": "15634795981767277077"
+        },
+        {
+          "file": "libs/website/horizontal-card/jest.config.ts",
+          "hash": "314329480406416014"
+        },
+        {
+          "file": "libs/website/horizontal-card/project.json",
+          "hash": "11441623715769430095"
+        },
+        {
+          "file": "libs/website/horizontal-card/src/index.ts",
+          "hash": "1436069848948021157"
+        },
+        {
+          "file": "libs/website/horizontal-card/src/lib/horizontal-card.component.html",
+          "hash": "11563743336675284526"
+        },
+        {
+          "file": "libs/website/horizontal-card/src/lib/horizontal-card.component.scss",
+          "hash": "13177120663092139229"
+        },
+        {
+          "file": "libs/website/horizontal-card/src/lib/horizontal-card.component.ts",
+          "hash": "896775674745238067",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "interface-cards"
+          ]
+        },
+        {
+          "file": "libs/website/horizontal-card/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular/setup-jest"
+          ]
+        },
+        {
+          "file": "libs/website/horizontal-card/tsconfig.json",
+          "hash": "8526453262384300416"
+        },
+        {
+          "file": "libs/website/horizontal-card/tsconfig.lib.json",
+          "hash": "6020606002228403423"
+        },
+        {
+          "file": "libs/website/horizontal-card/tsconfig.spec.json",
+          "hash": "7159729809249402441"
+        }
+      ],
       "website-navestockapp": [
         {
           "file": "packages/website/navestockapp/.eslintrc.json",
@@ -767,7 +934,7 @@
         },
         {
           "file": "packages/website/navestockapp/project.json",
-          "hash": "16807299110159257866"
+          "hash": "5163163800106713271"
         },
         {
           "file": "packages/website/navestockapp/src/app/app.component.html",
@@ -775,7 +942,7 @@
         },
         {
           "file": "packages/website/navestockapp/src/app/app.component.scss",
-          "hash": "10743331177385775351"
+          "hash": "14911283001266148694"
         },
         {
           "file": "packages/website/navestockapp/src/app/app.component.ts",
@@ -822,7 +989,7 @@
         },
         {
           "file": "packages/website/navestockapp/src/app/home/recruitment/recruitment.component.scss",
-          "hash": "11036302838172890714"
+          "hash": "8348228771596465669"
         },
         {
           "file": "packages/website/navestockapp/src/app/home/recruitment/recruitment.component.ts",
@@ -856,7 +1023,7 @@
         },
         {
           "file": "packages/website/navestockapp/src/app/scoreboard/scoreboard.component.scss",
-          "hash": "10520351595590092285"
+          "hash": "2572249340710892247"
         },
         {
           "file": "packages/website/navestockapp/src/app/scoreboard/scoreboard.component.ts",
@@ -894,7 +1061,7 @@
         },
         {
           "file": "packages/website/navestockapp/src/ncc-styles.scss",
-          "hash": "587670831875357975"
+          "hash": "13020145004581299369"
         },
         {
           "file": "packages/website/navestockapp/src/test-setup.ts",
@@ -920,46 +1087,161 @@
           "hash": "7159729809249402441"
         }
       ],
-      "interface-playcricket": [
+      "interfaces-scoreboard": [
         {
-          "file": "libs/interface-playcricket/.babelrc",
+          "file": "libs/interfaces-scoreboard/.eslintrc.json",
+          "hash": "11525843981342747207"
+        },
+        {
+          "file": "libs/interfaces-scoreboard/README.md",
+          "hash": "7161215133385058685"
+        },
+        {
+          "file": "libs/interfaces-scoreboard/project.json",
+          "hash": "6389050277976709262"
+        },
+        {
+          "file": "libs/interfaces-scoreboard/src/index.ts",
+          "hash": "4054818588683536413"
+        },
+        {
+          "file": "libs/interfaces-scoreboard/src/lib/interfaces-scoreboard.component.ts",
+          "hash": "4956530439053623331"
+        },
+        {
+          "file": "libs/interfaces-scoreboard/tsconfig.json",
+          "hash": "5777024872976636135"
+        },
+        {
+          "file": "libs/interfaces-scoreboard/tsconfig.lib.json",
+          "hash": "7011189300034302924"
+        }
+      ],
+      "interface-cards": [
+        {
+          "file": "libs/website/interfaces/cards/.eslintrc.json",
+          "hash": "1158248285218137714"
+        },
+        {
+          "file": "libs/website/interfaces/cards/README.md",
+          "hash": "3379025578631953739"
+        },
+        {
+          "file": "libs/website/interfaces/cards/jest.config.ts",
+          "hash": "2823918455276048392"
+        },
+        {
+          "file": "libs/website/interfaces/cards/project.json",
+          "hash": "9504316509512028116"
+        },
+        {
+          "file": "libs/website/interfaces/cards/src/index.ts",
+          "hash": "6415534157297434777"
+        },
+        {
+          "file": "libs/website/interfaces/cards/src/lib/interface-cards.component.ts",
+          "hash": "11705475128160042117"
+        },
+        {
+          "file": "libs/website/interfaces/cards/tsconfig.json",
+          "hash": "16248533471678702062"
+        },
+        {
+          "file": "libs/website/interfaces/cards/tsconfig.lib.json",
+          "hash": "8746075233993636049"
+        },
+        {
+          "file": "libs/website/interfaces/cards/tsconfig.spec.json",
+          "hash": "9840611283105717156"
+        }
+      ],
+      "services-publishpubsubmessages": [
+        {
+          "file": "libs/services-publishpubsubmessages/.babelrc",
           "hash": "14637968239574891430"
         },
         {
-          "file": "libs/interface-playcricket/.eslintrc.json",
+          "file": "libs/services-publishpubsubmessages/.eslintrc.json",
           "hash": "13800677001662881425"
         },
         {
-          "file": "libs/interface-playcricket/README.md",
-          "hash": "1409914507539823574"
+          "file": "libs/services-publishpubsubmessages/README.md",
+          "hash": "10034007343212232363"
         },
         {
-          "file": "libs/interface-playcricket/jest.config.ts",
-          "hash": "7799950794112557445"
+          "file": "libs/services-publishpubsubmessages/jest.config.ts",
+          "hash": "5279685845665378849"
         },
         {
-          "file": "libs/interface-playcricket/project.json",
-          "hash": "17913850765886629009"
+          "file": "libs/services-publishpubsubmessages/project.json",
+          "hash": "16970275054160670305"
         },
         {
-          "file": "libs/interface-playcricket/src/index.ts",
-          "hash": "18163368635442838646"
+          "file": "libs/services-publishpubsubmessages/src/index.ts",
+          "hash": "17776948597553741137"
         },
         {
-          "file": "libs/interface-playcricket/src/lib/interface-playcricket.ts",
-          "hash": "16265817239732821785"
+          "file": "libs/services-publishpubsubmessages/src/lib/services-publishpubsubmessages.ts",
+          "hash": "17401116990265832813",
+          "deps": [
+            "npm:@google-cloud/pubsub",
+            "npm:rxjs",
+            "npm:firebase-functions"
+          ]
         },
         {
-          "file": "libs/interface-playcricket/tsconfig.json",
+          "file": "libs/services-publishpubsubmessages/tsconfig.json",
           "hash": "17079550796797979564"
         },
         {
-          "file": "libs/interface-playcricket/tsconfig.lib.json",
+          "file": "libs/services-publishpubsubmessages/tsconfig.lib.json",
           "hash": "1398023143379268451"
         },
         {
-          "file": "libs/interface-playcricket/tsconfig.spec.json",
+          "file": "libs/services-publishpubsubmessages/tsconfig.spec.json",
           "hash": "6514620907549802163"
+        }
+      ],
+      "ui-styles": [
+        {
+          "file": "libs/ui/styles/.eslintrc.json",
+          "hash": "15113110486885045255"
+        },
+        {
+          "file": "libs/ui/styles/README.md",
+          "hash": "17795240270469916074"
+        },
+        {
+          "file": "libs/ui/styles/project.json",
+          "hash": "17089408863763641841"
+        },
+        {
+          "file": "libs/ui/styles/src/index.ts",
+          "hash": "10052752919496347662"
+        },
+        {
+          "file": "libs/ui/styles/src/lib/scss/_palette.scss",
+          "hash": "13329060744970509844"
+        },
+        {
+          "file": "libs/ui/styles/src/lib/ui-styles.module.ts",
+          "hash": "16653487795978607281",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "libs/ui/styles/tsconfig.json",
+          "hash": "3614259631602626701"
+        },
+        {
+          "file": "libs/ui/styles/tsconfig.lib.json",
+          "hash": "14882717054991120248"
+        },
+        {
+          "file": "libs/ui/styles/src/lib/scss/_ncc_material_theme.scss",
+          "hash": "11142667526096466080"
         }
       ],
       "services-matchinterface": [
@@ -1025,284 +1307,6 @@
         {
           "file": "libs/services-matchinterface/tsconfig.spec.json",
           "hash": "6514620907549802163"
-        }
-      ],
-      "services-publishpubsubmessages": [
-        {
-          "file": "libs/services-publishpubsubmessages/.babelrc",
-          "hash": "14637968239574891430"
-        },
-        {
-          "file": "libs/services-publishpubsubmessages/.eslintrc.json",
-          "hash": "13800677001662881425"
-        },
-        {
-          "file": "libs/services-publishpubsubmessages/README.md",
-          "hash": "10034007343212232363"
-        },
-        {
-          "file": "libs/services-publishpubsubmessages/jest.config.ts",
-          "hash": "5279685845665378849"
-        },
-        {
-          "file": "libs/services-publishpubsubmessages/project.json",
-          "hash": "16970275054160670305"
-        },
-        {
-          "file": "libs/services-publishpubsubmessages/src/index.ts",
-          "hash": "17776948597553741137"
-        },
-        {
-          "file": "libs/services-publishpubsubmessages/src/lib/services-publishpubsubmessages.ts",
-          "hash": "17401116990265832813",
-          "deps": [
-            "npm:@google-cloud/pubsub",
-            "npm:rxjs",
-            "npm:firebase-functions"
-          ]
-        },
-        {
-          "file": "libs/services-publishpubsubmessages/tsconfig.json",
-          "hash": "17079550796797979564"
-        },
-        {
-          "file": "libs/services-publishpubsubmessages/tsconfig.lib.json",
-          "hash": "1398023143379268451"
-        },
-        {
-          "file": "libs/services-publishpubsubmessages/tsconfig.spec.json",
-          "hash": "6514620907549802163"
-        }
-      ],
-      "services-playcricketapi": [
-        {
-          "file": "libs/services-playcricketapi/.babelrc",
-          "hash": "14637968239574891430"
-        },
-        {
-          "file": "libs/services-playcricketapi/.eslintrc.json",
-          "hash": "13800677001662881425"
-        },
-        {
-          "file": "libs/services-playcricketapi/README.md",
-          "hash": "12386827684958273387"
-        },
-        {
-          "file": "libs/services-playcricketapi/jest.config.ts",
-          "hash": "10056924458759570757"
-        },
-        {
-          "file": "libs/services-playcricketapi/project.json",
-          "hash": "11782679702695352564"
-        },
-        {
-          "file": "libs/services-playcricketapi/src/index.ts",
-          "hash": "8026039890109264459"
-        },
-        {
-          "file": "libs/services-playcricketapi/src/lib/services-playcricketapi.ts",
-          "hash": "372629530457262963",
-          "deps": [
-            "npm:axios",
-            "npm:rxjs",
-            "npm:../../../../environments/PlayCricket",
-            "interface-playcricket"
-          ]
-        },
-        {
-          "file": "libs/services-playcricketapi/tsconfig.json",
-          "hash": "17079550796797979564"
-        },
-        {
-          "file": "libs/services-playcricketapi/tsconfig.lib.json",
-          "hash": "1398023143379268451"
-        },
-        {
-          "file": "libs/services-playcricketapi/tsconfig.spec.json",
-          "hash": "6514620907549802163"
-        }
-      ],
-      "functions-apihello": [
-        {
-          "file": "packages/functions/api-hello/.eslintrc.json",
-          "hash": "9703569748258640057"
-        },
-        {
-          "file": "packages/functions/api-hello/jest.config.ts",
-          "hash": "8147873660135243274"
-        },
-        {
-          "file": "packages/functions/api-hello/project.json",
-          "hash": "17609327306183124127"
-        },
-        {
-          "file": "packages/functions/api-hello/src/app/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "packages/functions/api-hello/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "packages/functions/api-hello/src/main.ts",
-          "hash": "390089214881313651",
-          "deps": [
-            "npm:firebase-functions/v2",
-            "npm:firebase-admin/app"
-          ]
-        },
-        {
-          "file": "packages/functions/api-hello/tsconfig.app.json",
-          "hash": "4049200675747760668"
-        },
-        {
-          "file": "packages/functions/api-hello/tsconfig.json",
-          "hash": "14785519187273610601"
-        },
-        {
-          "file": "packages/functions/api-hello/tsconfig.spec.json",
-          "hash": "9110660443763673899"
-        }
-      ],
-      "interface-cards": [
-        {
-          "file": "libs/website/interfaces/cards/.eslintrc.json",
-          "hash": "1158248285218137714"
-        },
-        {
-          "file": "libs/website/interfaces/cards/README.md",
-          "hash": "3379025578631953739"
-        },
-        {
-          "file": "libs/website/interfaces/cards/jest.config.ts",
-          "hash": "2823918455276048392"
-        },
-        {
-          "file": "libs/website/interfaces/cards/project.json",
-          "hash": "9504316509512028116"
-        },
-        {
-          "file": "libs/website/interfaces/cards/src/index.ts",
-          "hash": "6415534157297434777"
-        },
-        {
-          "file": "libs/website/interfaces/cards/src/lib/interface-cards.component.ts",
-          "hash": "11705475128160042117"
-        },
-        {
-          "file": "libs/website/interfaces/cards/tsconfig.json",
-          "hash": "16248533471678702062"
-        },
-        {
-          "file": "libs/website/interfaces/cards/tsconfig.lib.json",
-          "hash": "8746075233993636049"
-        },
-        {
-          "file": "libs/website/interfaces/cards/tsconfig.spec.json",
-          "hash": "9840611283105717156"
-        }
-      ],
-      "ui-styles": [
-        {
-          "file": "libs/ui/styles/.eslintrc.json",
-          "hash": "15113110486885045255"
-        },
-        {
-          "file": "libs/ui/styles/README.md",
-          "hash": "17795240270469916074"
-        },
-        {
-          "file": "libs/ui/styles/project.json",
-          "hash": "17089408863763641841"
-        },
-        {
-          "file": "libs/ui/styles/src/index.ts",
-          "hash": "10052752919496347662"
-        },
-        {
-          "file": "libs/ui/styles/src/lib/scss/_palette.scss",
-          "hash": "13329060744970509844"
-        },
-        {
-          "file": "libs/ui/styles/src/lib/ui-styles.module.ts",
-          "hash": "16653487795978607281",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common"
-          ]
-        },
-        {
-          "file": "libs/ui/styles/tsconfig.json",
-          "hash": "3614259631602626701"
-        },
-        {
-          "file": "libs/ui/styles/tsconfig.lib.json",
-          "hash": "14882717054991120248"
-        }
-      ],
-      "functions-playcricket-matchlistimport": [
-        {
-          "file": "packages/functions/playcricket-matchlistimport/.eslintrc.json",
-          "hash": "9703569748258640057"
-        },
-        {
-          "file": "packages/functions/playcricket-matchlistimport/jest.config.ts",
-          "hash": "7520985523187999592"
-        },
-        {
-          "file": "packages/functions/playcricket-matchlistimport/project.json",
-          "hash": "16572169059866596071"
-        },
-        {
-          "file": "packages/functions/playcricket-matchlistimport/src/app/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "packages/functions/playcricket-matchlistimport/src/app/http/httpTriggerPubSubPlayCricketImport.ts",
-          "hash": "11182864871607954398",
-          "deps": [
-            "npm:firebase-functions/v2/https",
-            "npm:firebase-functions/v2",
-            "services-publishpubsubmessages"
-          ]
-        },
-        {
-          "file": "packages/functions/playcricket-matchlistimport/src/app/pubsub/getPlayCricketMatchList.ts",
-          "hash": "12703446256882570247",
-          "deps": [
-            "npm:firebase-functions/v2/pubsub",
-            "npm:firebase-functions/v2",
-            "npm:rxjs/operators",
-            "npm:rxjs",
-            "services-publishpubsubmessages",
-            "services-match-firestoredb",
-            "services-playcricketapi",
-            "interface-playcricket",
-            "interfaces-match"
-          ]
-        },
-        {
-          "file": "packages/functions/playcricket-matchlistimport/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "packages/functions/playcricket-matchlistimport/src/main.ts",
-          "hash": "18418319041637112080",
-          "deps": [
-            "npm:firebase-admin/app"
-          ]
-        },
-        {
-          "file": "packages/functions/playcricket-matchlistimport/tsconfig.app.json",
-          "hash": "4049200675747760668"
-        },
-        {
-          "file": "packages/functions/playcricket-matchlistimport/tsconfig.json",
-          "hash": "14785519187273610601"
-        },
-        {
-          "file": "packages/functions/playcricket-matchlistimport/tsconfig.spec.json",
-          "hash": "9110660443763673899"
         }
       ]
     }

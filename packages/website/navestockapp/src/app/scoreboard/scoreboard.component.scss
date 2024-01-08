@@ -1,42 +1,42 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
 
-@use '../../ncc-styles.scss' as nccstyle;
+@use 'ncc_material_theme' as ncc_theme;
 
 
 button[mat-flat-button][plus1]{
-    background-color: mat.get-color-from-palette(nccstyle.$ncc-accent, 200);
-    color: mat.get-color-from-palette(nccstyle.$ncc-accent, 200-contrast);
+    background-color: mat.get-color-from-palette(ncc_theme.$ncc-accent, 200);
+    color: mat.get-color-from-palette(ncc_theme.$ncc-accent, 200-contrast);
     grid-area: add1;
 }
 
 button[mat-flat-button][plus2]{
-    background-color: mat.get-color-from-palette(nccstyle.$ncc-accent, 300);
-    color: mat.get-color-from-palette(nccstyle.$ncc-accent, 300-contrast);
+    background-color: mat.get-color-from-palette(ncc_theme.$ncc-accent, 300);
+    color: mat.get-color-from-palette(ncc_theme.$ncc-accent, 300-contrast);
     grid-area: add2;
 }
 
 button[mat-flat-button][plus3]{
-    background-color: mat.get-color-from-palette(nccstyle.$ncc-accent, 500);
-    color: mat.get-color-from-palette(nccstyle.$ncc-accent, 500-contrast);
+    background-color: mat.get-color-from-palette(ncc_theme.$ncc-accent, 500);
+    color: mat.get-color-from-palette(ncc_theme.$ncc-accent, 500-contrast);
     grid-area: add3;
 }
 
 button[mat-flat-button][plus4]{
-    background-color: mat.get-color-from-palette(nccstyle.$ncc-accent, 700);
-    color: mat.get-color-from-palette(nccstyle.$ncc-accent, 700-contrast);
+    background-color: mat.get-color-from-palette(ncc_theme.$ncc-accent, 700);
+    color: mat.get-color-from-palette(ncc_theme.$ncc-accent, 700-contrast);
     grid-area: add4;
 }
 
 button[mat-flat-button][plus6]{
-    background-color: mat.get-color-from-palette(nccstyle.$ncc-accent, 900);
-    color: mat.get-color-from-palette(nccstyle.$ncc-accent, 900-contrast);
+    background-color: mat.get-color-from-palette(ncc_theme.$ncc-accent, 900);
+    color: mat.get-color-from-palette(ncc_theme.$ncc-accent, 900-contrast);
     grid-area: add6;
 }
 
 button[mat-flat-button][min1]{
-    background-color: mat.get-color-from-palette(nccstyle.$ncc-warn, 500);
-    color: mat.get-color-from-palette(nccstyle.$ncc-warn, 500-contrast);
+    background-color: mat.get-color-from-palette(ncc_theme.$ncc-warn, 500);
+    color: mat.get-color-from-palette(ncc_theme.$ncc-warn, 500-contrast);
     grid-area: rem1;
 }
 

@@ -60,7 +60,7 @@
         "development": {
           "buildOptimizer": false,
           "optimization": false,
-          "vendorChunk": true,
+          "vendorChunk": false,
           "extractLicenses": false,
           "sourceMap": true,
           "namedChunks": true
@@ -72,11 +72,11 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "website-navestockapp:build:production",
+          "buildTarget": "website-navestockapp:build:production",
           "forceEsbuild": true
         },
         "development": {
-          "browserTarget": "website-navestockapp:build:development",
+          "buildTarget": "website-navestockapp:build:development",
           "forceEsbuild": true
         }
       },
@@ -85,7 +85,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "website-navestockapp:build"
+        "buildTarget": "website-navestockapp:build"
       }
     },
     "lint": {
@@ -116,7 +116,7 @@
       "executor": "@angular/fire:deploy",
       "options": {
         "version": 2,
-        "browserTarget": "website-navestockapp:build:production"
+        "buildTarget": "website-navestockapp:build:production"
       }
     }
   }

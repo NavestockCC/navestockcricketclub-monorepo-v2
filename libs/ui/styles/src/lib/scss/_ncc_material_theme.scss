@@ -1,0 +1,44 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use './palette' as ncc_palette;
+
+
+
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$ncc-fonts: 'system-ui';
+
+$ncc-Typography: mat.define-typography-config($font-family: $ncc-fonts,
+$headline-1: mat.define-typography-level($font-size: 96px, $font-weight: 300, $font-family: $ncc-fonts),
+$headline-2: mat.define-typography-level($font-size: 60px, $font-weight: 300, $font-family: $ncc-fonts),
+$headline-3: mat.define-typography-level($font-size: 48px, $font-weight: 400, $font-family: $ncc-fonts),
+$headline-4: mat.define-typography-level($font-size: 34px, $font-weight: 400, $font-family: $ncc-fonts),
+$headline-5: mat.define-typography-level($font-size: 24px, $font-weight: 400, $font-family: s$ncc-fonts),
+$headline-6: mat.define-typography-level($font-size: 20px, $font-weight: 700, $font-family: $ncc-fonts),
+$subtitle-1: mat.define-typography-level($font-size: 16px, $font-weight: 500, $font-family: $ncc-fonts),
+$subtitle-2: mat.define-typography-level($font-size: 14px, $font-weight: 500, $font-family: $ncc-fonts),
+$body-1: mat.define-typography-level($font-size: 16px, $font-weight: 400, $font-family: $ncc-fonts),
+$body-2: mat.define-typography-level($font-size: 14px, $font-weight: 400, $font-family: $ncc-fonts),
+$caption: mat.define-typography-level($font-size: 16px, $font-weight: 500, $font-family: $ncc-fonts),
+$button: mat.define-typography-level($font-size: 16px, $font-weight: 400, $font-family: $ncc-fonts),
+$overline: mat.define-typography-level($font-size: 10px, $font-weight: 400, $font-family: $ncc-fonts)
+);
+
+$ncc-primary: mat.define-palette(ncc_palette.$nccPrimary, 500, 300, 900);
+$ncc-accent: mat.define-palette(ncc_palette.$nccAccent, 500, 300, 800);
+// The warn palette is optional (defaults to red).
+$ncc-warn: mat.define-palette(mat.$red-palette);
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$ncc-theme: mat.define-light-theme((
+  color: (
+    primary: $ncc-primary,
+    accent: $ncc-accent,
+    warn: $ncc-warn,
+  ),
+  typography: $ncc-Typography
+));
+
+// Emit theme-dependent styles for common features used across multiple components.
+@include mat.all-component-themes($ncc-theme);
